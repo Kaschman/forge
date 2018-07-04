@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "rules": {
+      "no-use-before-define" : ["off"],
+      "function-paren-newline": ["off"],
+      "jsx-a11y/anchor-is-valid": ["off"],
+      "no-param-reassign": ["error", { "props": false }],
+      "no-console": ["warn", { "allow": ["warn", "error"] }],
+      "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+      "semi": ["error", "never", { "beforeStatementContinuationChars": "never"}]
+    }
+}
