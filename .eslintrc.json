@@ -5,7 +5,12 @@
       "browser": true,
       "jest": true
     },
+    "plugins": [
+      "flowtype"
+    ],
     "rules": {
+      "flowtype/define-flow-type": 1,
+      "react/destructuring-assignment": ["off"],
       "no-use-before-define" : ["off"],
       "function-paren-newline": ["off"],
       "jsx-a11y/anchor-is-valid": ["off"],
