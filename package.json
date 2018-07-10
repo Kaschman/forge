@@ -19,7 +19,9 @@
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx --ignore-path .gitignore --ignore-pattern 'flow-typed'",
     "fix": "./node_modules/.bin/eslint . --ext .js,.jsx --ignore-path .gitignore --ignore-pattern 'flow-typed' --fix"
   },
-  "dependencies": {},
+  "dependencies": {
+    "styled-components": "^3.3.3"
+  },
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
@@ -35,6 +37,7 @@
     "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
