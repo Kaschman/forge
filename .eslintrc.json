@@ -2,7 +2,8 @@
     "extends": "airbnb",
     "parser": "babel-eslint",
     "env": {
-      "browser": true,
+      "es6": true,
+      "node": true,
       "jest": true
     },
     "plugins": [
@@ -10,6 +11,7 @@
     ],
     "rules": {
       "flowtype/define-flow-type": 1,
+      "import/prefer-default-export": ["off"],
       "react/destructuring-assignment": ["off"],
       "no-use-before-define" : ["off"],
       "function-paren-newline": ["off"],
