@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save forge
+yarn add @combine-labs/forge
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save forge
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'forge'
+import { MyComponent } from '@combine-labs/forge'
 
 class Example extends Component {
   render () {
@@ -25,6 +25,19 @@ class Example extends Component {
   }
 }
 ```
+
+## Storybook
+
+https://storybook.js.org/
+
+Start storybook:
+`yarn run storybook`
+
+Storybook will now be available at `localhost:6006`
+
+## Contributing
+
+
 
 ## License
 
