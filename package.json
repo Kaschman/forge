@@ -10,7 +10,7 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "build": "webpack --mode production --config tooling/webpack/webpack.config.js",
-    "lint": "eslint ./src --fix --ext .js,.jsx",
+    "lint": "eslint ./src ./tooling ./stories --fix --ext .js,.jsx",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
