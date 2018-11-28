@@ -1,7 +1,6 @@
-import DataTable from './components/DataTable'
-import FormDate from './components/FormDate'
+// @flow
+import components from 'Components'
 
 export {
-  DataTable,
-  FormDate,
+  components,
 }

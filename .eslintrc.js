@@ -1,17 +1,23 @@
 module.exports = {
-  extends: 'airbnb',
+  extends: ['airbnb', 'prettier', 'prettier/flowtype', 'prettier/react'],
   parser: 'babel-eslint',
   env: {
     es6: true,
     node: true,
     jest: true,
   },
+  parserOptions: {
+    ecmaVersion: 2018,
+  },
   plugins: [
+    'babel',
     'flowtype',
+    'react',
+    'prettier',
   ],
   rules: {
     'flowtype/define-flow-type': 1,
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['stories/**/*.js'] }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['stories/**/*.js', '.storybook/**/*.js'] }],
     'import/prefer-default-export': ['off'],
     'react/destructuring-assignment': ['off'],
     'no-use-before-define': ['off'],
@@ -22,4 +28,9 @@ module.exports = {
     'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
     semi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],
   },
+  settings: {
+    "import/resolver": {
+      "babel-module": {},
+    }
+  }
 }
