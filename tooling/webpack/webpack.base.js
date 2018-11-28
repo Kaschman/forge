@@ -45,7 +45,7 @@ module.exports = (root) => {
           ],
         },
         {
-          test: /\.js$/,
+          test: /\.js(x?)$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
         },
