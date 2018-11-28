@@ -8,17 +8,15 @@ module.exports = (root) => {
 
   return {
     entry: ['@babel/polyfill', path.resolve(PATHS.src, 'index.js')],
+    target: "node",
     output: {
       path: PATHS.dist,
       filename: 'index.bundle.js',
-      libraryTarget: 'commonjs2',
-    },
-    optimization: {
-      splitChunks: {
-        chunks: 'all',
-      },
+      library: 'forge',
+      libraryTarget: 'umd',
     },
     devtool: 'inline-source-map',
+    // externals: ['lodash', 'moment', 'react'],
     module: {
       rules: [
         {

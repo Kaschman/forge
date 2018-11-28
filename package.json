@@ -21,13 +21,8 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "eslint-import-resolver-babel-module": "5.0.0-beta.1",
     "moment": "^2.22.2",
+    "react": "^16.6.3",
     "styled-components": "^3.4.10"
-  },
-  "peerDependencies": {
-    "enzyme": "^3.7.0",
-    "jest": "^23.6.0",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -55,7 +50,6 @@
     "flow-copy-source": "^2.0.1",
     "gh-pages": "^1.1.0",
     "jest-enzyme": "^6.0.2",
-    "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
