@@ -1,6 +1,10 @@
 // @flow
-import components from 'Components'
+import {
+  DataTable,
+  FormDate,
+} from 'Components'
 
 export {
-  components,
+  DataTable,
+  FormDate,
 }
