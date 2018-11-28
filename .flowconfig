@@ -1,6 +1,9 @@
 [ignore]
 .*/node_modules/*
 .*/dist/.*
+.*/stories/.*
+.*/tooling/.*
+.*/.storybook/.*
 
 [include]
 
@@ -10,6 +13,7 @@ flow-typed
 [lints]
 
 [options]
+all=true
 module.name_mapper='^Components' ->'<PROJECT_ROOT>/src/components'
 
 [strict]
