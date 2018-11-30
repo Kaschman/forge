@@ -6,6 +6,12 @@ module.exports = {
     node: true,
     jest: true,
   },
+  overrides: [{
+    files: [ '**/*.stories.js'],
+    rules: {
+      'no-console': 0
+    }
+  }],
   parserOptions: {
     ecmaVersion: 2018,
   },
