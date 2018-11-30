@@ -6,5 +6,9 @@ import { FormDate } from 'Components'
 
 storiesOf('FormDate', module)
   .add('Empty State', () => (
-    <FormDate />
+    <FormDate
+      name='Date'
+      onChange={(val) => console.log(val)}
+      value={new Date()}
+    />
   ))

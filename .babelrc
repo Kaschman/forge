@@ -12,6 +12,7 @@
       "alias": {
         "Components": "./src/components"
       }
-    }]
+    }],
+    "react-docgen"
   ]
 }

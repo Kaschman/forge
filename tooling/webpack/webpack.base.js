@@ -8,7 +8,6 @@ module.exports = (root) => {
 
   return {
     entry: ['@babel/polyfill', path.resolve(PATHS.src, 'index.js')],
-    target: "node",
     output: {
       path: PATHS.dist,
       filename: 'index.bundle.js',
