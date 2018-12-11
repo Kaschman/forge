@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
+import '@combine-labs/combine-polaris/styles.css'
 
 import { AppProvider } from '@combine-labs/combine-polaris'
 

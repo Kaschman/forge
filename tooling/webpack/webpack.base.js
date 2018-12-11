@@ -38,7 +38,7 @@ module.exports = (root) => {
                 camelCase: true,
               },
             },
-            { loader: 'postcss-loader' },
+            // { loader: 'postcss-loader' },
           ],
         },
         {
