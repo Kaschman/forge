@@ -22,6 +22,9 @@
     "eslint-import-resolver-babel-module": "5.0.0-beta.1",
     "moment": "^2.22.2",
     "react": "^16.6.3",
+    "react-datepicker": "^2.0.0",
+    "react-dom": "^16.7.0",
+    "react-select": "^2.3.0",
     "styled-components": "^3.4.10"
   },
   "devDependencies": {
@@ -55,8 +58,9 @@
     "flow-copy-source": "^2.0.1",
     "gh-pages": "^1.1.0",
     "jest-enzyme": "^6.0.2",
+    "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
-    "react-dom": "^16.2.0",
+    "sass-loader": "^7.1.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   },

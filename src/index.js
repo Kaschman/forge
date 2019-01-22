@@ -1,10 +1,8 @@
 // @flow
 import {
-  //DataTable,
   FormDate,
-} from 'Components'
+} from 'components'
 
 export {
-  //DataTable,
   FormDate,
 }

@@ -3,17 +3,30 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import '@combine-labs/combine-polaris/styles.css'
 
-import { AppProvider } from '@combine-labs/combine-polaris'
-
-import { FormDate } from 'Components'
+import { FormDate } from 'components'
 
 storiesOf('FormDate', module)
   .add('Empty State', () => (
-    <AppProvider>
-      <FormDate
-        name='Date'
-        onChange={(val) => console.log(val)}
-        value={new Date()}
-      />
-    </AppProvider>
+    <FormDate
+      name='date'
+      onChange={(val) => console.log(val)}
+      value={new Date()}
+    />
+  ))
+  .add('Labeled', () => (
+    <FormDate
+      name='date'
+      label='Example Date Label'
+      onChange={(val) => console.log(val)}
+      value={new Date}
+    />
+  ))
+  .add('Errored', () => (
+    <FormDate
+      name='date'
+      label='Example Date Label'
+      error='There was an error'
+      onChange={(val) => console.log(val)}
+      value={new Date}
+    />
   ))

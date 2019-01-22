@@ -1,135 +1,98 @@
-// @flow
+/* global document */
+
 import * as React from 'react'
+import DatePicker from 'react-datepicker'
+import ReactDOM from 'react-dom'
 import moment from 'moment'
 
-import {
-  DatePicker,
-  TextField,
-  Popover,
-} from '@combine-labs/combine-polaris'
+import 'react-datepicker/dist/react-datepicker.css'
+
+import { Label } from '@combine-labs/combine-polaris'
+
+import styles from './FormDate.module.css'
 
 type Props = {
   label?: string,
-  value: Date | string | number,
+  /** Date value for the datepicker */
+  value: Date | string | number, // eslint-disable-line react/no-unused-prop-types
   name: string,
   onChange: (attribute: string, value: mixed) => void,
+  disabled?: boolean,
 }
 
 type State = {
-  showPopover: boolean,
-  month: number,
-  year: number,
-  selected: {
-    start: Date,
-    end: Date,
-  },
-  dateParsed: string,
+  startDate: Date,
 }
+
+const CalendarContainer = ({ children }) => (children ? (
+  ReactDOM.createPortal(React.cloneElement(children, {
+    className: 'react-datepicker-popper',
+  }), document.body)
+) : null)
 
 class FormDate extends React.Component<Props, State> {
   static defaultProps = {
-    label: '',
+    disabled: false,
+    label: undefined,
   }
 
   state = {
-    showPopover: false,
-    month: moment().month(),
-    year: moment().year(),
-    selected: {
-      start: new Date(),
-      end: new Date(),
-    },
-    dateParsed: '',
+    startDate: undefined,
   }
 
-  opening = false
+  static getDerivedStateFromProps(props: Props, state: State) {
+    const { value } = props
 
-  componentDidMount() {
-    const momentDate = moment(this.props.value)
+    const momentDate = moment(value)
 
-    if (this.props.value && momentDate.isValid()) {
-      this.handleChange({
-        start: moment(this.props.value).toDate(),
-        end: moment(this.props.value).toDate(),
-      })
+    const updatedState = state
 
-      this.handleMonthChange(
-        new Date(this.props.value).getMonth(),
-        new Date(this.props.value).getFullYear(),
-      )
-    } else {
-      this.handleMonthChange(new Date().getMonth(), new Date().getFullYear())
+    if (value && momentDate.isValid()) {
+      updatedState.startDate = momentDate.toDate()
     }
+
+    return updatedState
   }
 
-  handleChange = (value: Object) => {
+  handleChange = (value: Date) => {
     const { name, onChange } = this.props
 
-    this.setState({ dateParsed: value.end.toISOString().substr(0, 10) })
-    this.setState({ selected: value })
-    onChange(name, moment(value.end).toDate())
-  }
-
-  handleMonthChange = (month: number, year: number) => {
     this.setState({
-      month,
-      year,
+      startDate: value,
     })
-  }
 
-  closePopover = () => {
-    if (!this.opening) {
-      this.setState({ showPopover: false })
-    }
-  }
-
-  openPopover = () => {
-    this.opening = true
-    this.setState({ showPopover: true })
-
-    setTimeout(() => {
-      this.opening = false
-      return null
-    }, 1000)
+    onChange(name, value)
   }
 
   render() {
     const {
-      label = 'Date',
+      disabled,
+      label,
     } = this.props
 
-    const {
-      dateParsed,
-      showPopover,
-    } = this.state
+    const { startDate } = this.state
 
     return (
-      <Popover
-        active={showPopover}
-        activator={(
-          <div
-            onClick={this.openPopover}
-            onKeyPress={this.openPopover}
-            role="button"
-            tabIndex="0"
-          >
-            <TextField
-              label={label}
-              value={dateParsed}
-            />
-          </div>
-          )}
-        onClose={this.closePopover}
-        sectioned
-      >
+      <div>
+        { label
+          ? <Label>{label}</Label> : null
+        }
         <DatePicker
-          month={this.state.month}
-          year={this.state.year}
+          className={styles.FormDate}
+          disabled={disabled}
+          selected={startDate}
           onChange={this.handleChange}
-          onMonthChange={this.handleMonthChange}
-          selected={this.state.selected}
+
+          dateFormatCalendar=" "
+          previousMonthButtonLabel="←"
+          nextMonthButtonLabel="→"
+          showYearDropdown
+          showMonthDropdown
+          useShortMonthInDropdown
+          dropdownMode="select"
+          popperContainer={CalendarContainer}
         />
-      </Popover>
+      </div>
     )
   }
 }

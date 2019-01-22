@@ -1,5 +1,21 @@
 const path = require('path')
 
+const CSSModuleLoader = {
+  loader: 'css-loader',
+  options: {
+    modules: true,
+    sourceMap: true,
+  },
+}
+
+const postCSSLoader = {
+  loader: 'postcss-loader',
+  options: {
+    ident: 'postcss',
+    sourceMap: true,
+  },
+}
+
 module.exports = (root) => {
   const PATHS = {}
   PATHS.root = root
@@ -26,6 +42,15 @@ module.exports = (root) => {
           options: {
             fix: true,
           },
+        },
+        {
+          test: /\.module\.scss$/,
+          use: [
+            'style-loader', // creates style nodes from JS strings
+            CSSModuleLoader,
+            postCSSLoader,
+            'sass-loader', // compiles Sass to CSS, using Node Sass by default
+          ],
         },
         {
           test: /\.css$/,
