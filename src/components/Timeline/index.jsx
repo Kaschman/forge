@@ -9,9 +9,9 @@ import {
   TextStyle,
 } from '@combine-labs/combine-polaris'
 
-import type { Event } from 'core/types'
+import type { Event } from 'types'
 
-import { dateStartIcon, dateEndIcon } from 'images/formattedIcons'
+import { dateStartIcon, dateEndIcon } from 'icons/formattedIcons'
 
 import * as styles from './Timeline.module.css'
 
