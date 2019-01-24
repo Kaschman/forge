@@ -1,0 +1,11 @@
+/* Shadows are intentionally very subtle gradiations. */
+.Timeline {
+  position: relative; }
+  .Timeline:after {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 17px;
+    bottom: 32px;
+    width: 2px;
+    background: #E4E6EB; }

@@ -1,3 +1,8 @@
-import DataTable from './components/DataTable'
+// @flow
+import {
+  FormDate,
+} from 'components'
 
-export default DataTable
+export {
+  FormDate,
+}
