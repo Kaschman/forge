@@ -41,14 +41,22 @@ function Timeline(props: Props) {
     <Stack vertical spacing="loose">
       <div className={styles.Timeline}>
         <Stack vertical spacing="loose">
-          { start ?
-            <Media
-              key="start"
-              icon={dateStartIcon}
-              iconBackdrop
-              header={<TextStyle variation="strong">{start.name}</TextStyle>}
-              body={<TextStyle variation="subdued">{start.status} <DatePreference>{moment(start.date).format('YYYY/MM/DD')}</DatePreference></TextStyle>}
-            /> : null
+          { start
+            ? (
+              <Media
+                key="start"
+                icon={dateStartIcon}
+                iconBackdrop
+                header={<TextStyle variation="strong">{start.name}</TextStyle>}
+                body={(
+                  <TextStyle variation="subdued">
+                    {start.status}
+                    {' '}
+                    <DatePreference>{moment(start.date).format('YYYY/MM/DD')}</DatePreference>
+                  </TextStyle>
+)}
+              />
+            ) : null
           }
           {(events && !_.isEmpty(events)) ? events.map((event, index) => (
             <Media
@@ -65,14 +73,22 @@ function Timeline(props: Props) {
             />
           )) : null
           }
-          { end ?
-            <Media
-              key="end"
-              icon={dateEndIcon}
-              iconBackdrop
-              header={<TextStyle variation="strong">{end.name}</TextStyle>}
-              body={<TextStyle variation="subdued">{end.status} <DatePreference>{moment(end.date).format('YYYY/MM/DD')}</DatePreference></TextStyle>}
-            /> : null
+          { end
+            ? (
+              <Media
+                key="end"
+                icon={dateEndIcon}
+                iconBackdrop
+                header={<TextStyle variation="strong">{end.name}</TextStyle>}
+                body={(
+                  <TextStyle variation="subdued">
+                    {end.status}
+                    {' '}
+                    <DatePreference>{moment(end.date).format('YYYY/MM/DD')}</DatePreference>
+                  </TextStyle>
+)}
+              />
+            ) : null
           }
         </Stack>
       </div>

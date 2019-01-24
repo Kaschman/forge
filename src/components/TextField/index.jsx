@@ -41,7 +41,7 @@ class TextInput extends React.Component<Props, State> {
           >
             {label}
           </label>
-          ) : null
+        ) : null
         }
         <input
           id={id}
