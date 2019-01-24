@@ -27,7 +27,7 @@ const onChange = (option) => {
   console.log(option)
 }
 
-storiesOf('Select', module)
+storiesOf('components/Select', module)
   .add('Empty State', () => (
     <Select
       options={options}

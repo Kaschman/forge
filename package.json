@@ -20,6 +20,7 @@
     "@combine-labs/combine-polaris": "^0.1.5",
     "babel-plugin-module-resolver": "^3.1.1",
     "eslint-import-resolver-babel-module": "5.0.0-beta.1",
+    "formik": "^1.4.2",
     "moment": "^2.22.2",
     "react": "^16.6.3",
     "react-datepicker": "^2.0.0",

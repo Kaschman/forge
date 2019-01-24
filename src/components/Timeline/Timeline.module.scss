@@ -1,0 +1,14 @@
+@import 'node_modules/@combine-labs/combine-polaris/styles/foundation';
+
+.Timeline {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 17px;
+    bottom: 32px;
+    width: 2px;
+    background: color('sky', 'light');
+  }
+}

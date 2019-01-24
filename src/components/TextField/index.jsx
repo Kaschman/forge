@@ -3,13 +3,7 @@ import React from 'react'
 import styles from './TextField.module.css'
 
 type Props = {
-  /** Field object. Designed to be used with Formik Field component.
-  {
-      name: 'field_name'
-  }
-  */
-  field: Object,
-  form: Object,
+  error?: string,
   label?: string,
 }
 
@@ -19,6 +13,7 @@ class TextInput extends React.Component<Props, State> {
   static count = 0
 
   static defaultProps = {
+    error: undefined,
     label: undefined,
   }
 
@@ -29,16 +24,9 @@ class TextInput extends React.Component<Props, State> {
 
   render() {
     const {
-      field,
-      form: {
-        errors,
-      },
+      error,
       label,
     } = this.props
-
-    const { name } = field
-
-    const error = errors[name]
 
     const { count } = TextInput
 
@@ -53,13 +41,13 @@ class TextInput extends React.Component<Props, State> {
           >
             {label}
           </label>
-        ) : null
+          ) : null
         }
         <input
           id={id}
           type="text"
           className={styles.TextField}
-          {...field}
+          {...this.props}
         />
         { error ? (
           <p className={styles.Error}>{error}</p>

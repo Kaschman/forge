@@ -5,7 +5,7 @@ import '@combine-labs/combine-polaris/styles.css'
 
 import { FormDate } from 'components'
 
-storiesOf('FormDate', module)
+storiesOf('components/FormDate', module)
   .add('Empty State', () => (
     <FormDate
       name='date'
