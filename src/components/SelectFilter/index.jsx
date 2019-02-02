@@ -2,12 +2,15 @@ import React from 'react'
 
 import type { Option } from 'types'
 
-import { Select } from 'components'
+import {
+  CheckboxFilter,
+  Select,
+} from 'components'
 
 type Props = {
   label?: string,
   onChange: (Object) => void,
-  options: [Option]
+  options: Option[],
 }
 
 function SelectFilter(props: Props) {
@@ -21,7 +24,11 @@ function SelectFilter(props: Props) {
 
   if (optionCount < 5) {
     return (
-      <div>These are only a few options</div>
+      <CheckboxFilter
+        label={label}
+        options={options}
+        onChange={onChange}
+      />
     )
   }
 

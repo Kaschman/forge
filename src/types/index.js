@@ -19,6 +19,7 @@ export type Event = {
 export type Option = {
   value: string,
   label: string,
+  selected?: boolean,
 }
 
 //  Filter Control Types (polaris)
