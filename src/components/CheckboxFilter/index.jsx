@@ -3,8 +3,14 @@ import React from 'react'
 import { Checkbox } from 'components'
 
 type Props = {
+  /** label for the multi-checkbox component */
   label?: string,
+  /** required onChange function that returns the selected options */
   onChange: (options) => void,
+  /**
+    Possible options that are rendered as a list of checkboxes.
+      Checkboxes will render as checked if option.selected = true
+  */
   options: Option[], // eslint-disable-line react/no-unused-prop-types
 }
 

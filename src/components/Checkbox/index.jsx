@@ -3,9 +3,16 @@ import React from 'react'
 import styles from './Checkbox.module.scss'
 
 type Props = {
+  /** Label for the checkbox */
   label?: string,
+  /** HTML name attribute for the input */
   name: string,
+  /**
+    Function called when the checkbox is changed.
+    Returns { value: string, selected: boolean }
+  */
   onChange: (option) => void,
+  /** Boolean determining if the checkbox is pre-checked */
   checked?: boolean, // eslint-disable-line react/no-unused-prop-types
 }
 

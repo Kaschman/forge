@@ -8,8 +8,11 @@ import {
 } from 'components'
 
 type Props = {
+  /** Label for the select filter */
   label?: string,
+  /** Function that returns the selected option on a change event */
   onChange: (Object) => void,
+  /** Options for the select filter */
   options: Option[],
 }
 
