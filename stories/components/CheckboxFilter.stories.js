@@ -28,3 +28,10 @@ storiesOf('components/CheckboxFilter', module)
       onChange={onChange}
     />
   ))
+  .add('Labeled Checkbox Filter', () => (
+    <CheckboxFilter
+      options={options}
+      onChange={onChange}
+      label="Labeled Checkbox Filter"
+    />
+  ))
