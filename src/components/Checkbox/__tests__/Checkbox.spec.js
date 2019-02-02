@@ -1,14 +1,23 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import sinon from 'sinon'
+import { mount, shallow } from 'enzyme'
 import 'test/setupTests'
 
 import { Checkbox } from 'components'
 
-const onChange = (option) => {
-  console.log(option)
-}
+const onChange = sinon.spy()
 
-const shallowWrapper = (props) => (
+const mountWrapper = props => (
+  mount(
+    <Checkbox
+      name="test"
+      onChange={onChange}
+      {...props}
+    />,
+  )
+)
+
+const shallowWrapper = props => (
   shallow(
     <Checkbox
       name="test"
@@ -35,5 +44,18 @@ describe('Checkbox', () => {
 
     expect(label.length).toBe(1)
     expect(label.text()).toBe(labelValue)
+  })
+
+  it('renders a checked input when pre-selected', () => {
+    const labelValue = 'Labelled'
+
+    const wrapper = mountWrapper({
+      label: labelValue,
+      checked: true,
+    })
+
+    const input = wrapper.find('input')
+
+    expect(input.props().checked).toBe(true)
   })
 })
