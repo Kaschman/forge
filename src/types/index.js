@@ -16,6 +16,11 @@ export type Event = {
   url?: string,
 }
 
+export type Option = {
+  value: string,
+  label: string,
+}
+
 //  Filter Control Types (polaris)
 export const FilterTypes = {
   Select: 0,

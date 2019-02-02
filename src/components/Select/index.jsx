@@ -8,6 +8,8 @@ type Props = {
   error?: string,
   /** Optional label to be presented above the select component */
   label?: string,
+  /** Boolean passed to react-select determining if the select is a multiselect */
+  isMulti: boolean,
   /** Boolean passed to react-select component determining if the select is typeable */
   isSearchable: boolean,
   /**
@@ -39,6 +41,7 @@ class Select extends React.Component<Props, State> {
     const {
       error,
       label,
+      isMulti = false,
       isSearchable = false,
       onChange,
     } = this.props
@@ -59,6 +62,7 @@ class Select extends React.Component<Props, State> {
         ) : null }
         <ReactSelect
           className={styles.Select}
+          isMulti={isMulti}
           isSearchable={isSearchable}
           onChange={onChange}
           {...this.props}
