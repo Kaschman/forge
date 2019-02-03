@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import 'test/setupTests'
 
-import { CheckboxFilter, SelectFilter } from 'components'
+import { SelectFilter } from 'components'
 
 const onChange = () => {}
 
@@ -68,7 +68,10 @@ describe('SelectFilter', () => {
       options: manyOptions,
     })
 
+    const checkboxFilter = wrapper.find('CheckboxFilter')
     const select = wrapper.find('Select')
+
     expect(select.length).toBe(1)
+    expect(checkboxFilter.length).toBe(0)
   })
 })

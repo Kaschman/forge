@@ -67,6 +67,7 @@ class CheckboxFilter extends React.Component<Props, State> {
         ) : null}
         { options.map((option: Option) => (
           <Checkbox
+            key={option.value}
             label={option.label}
             name={option.value}
             checked={option.selected}
