@@ -41,8 +41,22 @@ storiesOf('components/SelectFilter', module)
       options={smallOptions}
     />
   ))
+  .add('Labeled Small Select Filter', () => (
+    <SelectFilter
+      label="Labeled Small Select"
+      onChange={onChange}
+      options={smallOptions}
+    />
+  ))
   .add('Large Select Filter', () => (
     <SelectFilter
+      onChange={onChange}
+      options={largeOptions}
+    />
+  ))
+  .add('Labeled Large Select Filter', () => (
+    <SelectFilter
+      label="Large Select Filter"
       onChange={onChange}
       options={largeOptions}
     />
