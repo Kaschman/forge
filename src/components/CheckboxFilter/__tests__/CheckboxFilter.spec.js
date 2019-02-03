@@ -27,7 +27,7 @@ const options = [
   },
 ]
 
-const onChange = console.log
+const onChange = () => {}
 
 const shallowWrapper = props => (
   shallow(

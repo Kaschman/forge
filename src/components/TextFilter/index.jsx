@@ -15,7 +15,7 @@ const components = {
   DropdownIndicator: null,
 }
 
-const createOption = (label: string) => ({
+export const createOption = (label: string) => ({
   label,
   value: label,
 })
@@ -23,7 +23,7 @@ const createOption = (label: string) => ({
 const deconstructOptions = (options: Object[]) => options.map(option => option.label)
 
 class TextFilter extends React.Component<Props, State> {
-  count = 0
+  static count = 0
 
   state = {
     inputValue: '',
