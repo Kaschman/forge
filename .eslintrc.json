@@ -15,12 +15,20 @@
       "SyntheticEvent": false,
       "SyntheticInputEvent": false
     },
-    "overrides": [{
-      "files": [ "**/*.stories.js"],
-      "rules": {
-        "no-console": 0
+    "overrides": [
+      {
+        "files": [ "**/*.stories.js"],
+        "rules": {
+          "no-console": 0
+        }
+      },
+      {
+        "files": [ "**/*.spec.js"],
+        "rules": {
+          "import/no-unresolved": 0
+        }
       }
-    }],
+    ],
     "rules": {
       "flowtype/no-types-missing-file-annotation": ["off"],
       "no-use-before-define" : ["off"],
