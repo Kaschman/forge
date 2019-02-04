@@ -10,7 +10,8 @@
     ["module-resolver", {
       "root": ["./src"],
       "alias": {
-        "Components": "./src/components"
+        "Components": "./src/components",
+        "test": "./test"
       }
     }],
     "react-docgen"
