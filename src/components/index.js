@@ -5,6 +5,7 @@ import FormTextField from './FormTextField'
 import Select from './Select'
 import SelectFilter from './SelectFilter'
 import TextField from './TextField'
+import TextFilter from './TextFilter'
 import Timeline from './Timeline'
 
 export {
@@ -15,5 +16,6 @@ export {
   Select,
   SelectFilter,
   TextField,
+  TextFilter,
   Timeline,
 }
