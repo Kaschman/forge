@@ -7,6 +7,7 @@ import SelectFilter from './SelectFilter'
 import TextField from './TextField'
 import TextFilter from './TextFilter'
 import Timeline from './Timeline'
+import Toast from './Toast'
 
 export {
   Checkbox,
@@ -18,4 +19,5 @@ export {
   TextField,
   TextFilter,
   Timeline,
+  Toast,
 }
