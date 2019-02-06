@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Checkbox } from 'components'
+import Checkbox from 'Checkbox'
 
 type Props = {
   /** label for the multi-checkbox component */

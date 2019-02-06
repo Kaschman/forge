@@ -2,10 +2,8 @@ import React from 'react'
 
 import type { Option } from 'types'
 
-import {
-  CheckboxFilter,
-  Select,
-} from 'components'
+import CheckboxFilter from 'CheckboxFilter'
+import Select from 'Select'
 
 type Props = {
   /** Label for the select filter */

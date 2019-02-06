@@ -26,7 +26,7 @@ module.exports = (root) => {
     entry: ['@babel/polyfill', path.resolve(PATHS.src, 'index.js')],
     output: {
       path: PATHS.dist,
-      filename: 'index.bundle.js',
+      filename: 'index.js',
       library: 'forge',
       libraryTarget: 'umd',
     },
