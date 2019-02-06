@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Select } from 'components'
+import Select from 'Select'
 
 const options = [
   {

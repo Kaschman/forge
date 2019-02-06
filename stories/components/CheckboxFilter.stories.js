@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { CheckboxFilter } from 'components'
+import CheckboxFilter from 'CheckboxFilter'
 
 const options = [
   {
