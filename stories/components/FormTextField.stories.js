@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { FormTextField } from 'components'
+import FormTextField from 'FormTextField'
 
 const field = {
   name: 'text_field',

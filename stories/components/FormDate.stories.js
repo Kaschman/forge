@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import '@combine-labs/combine-polaris/styles.css'
 
-import { FormDate } from 'components'
+import FormDate from 'FormDate'
 
 storiesOf('components/FormDate', module)
   .add('Empty State', () => (

@@ -3,7 +3,7 @@ import sinon from 'sinon'
 import { mount, shallow } from 'enzyme'
 import 'test/setupTests'
 
-import { Checkbox } from 'components'
+import Checkbox from 'Checkbox'
 
 const onChange = sinon.spy()
 

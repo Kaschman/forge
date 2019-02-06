@@ -2,9 +2,9 @@ import React from 'react'
 import { mount } from 'enzyme'
 import 'test/setupTests'
 
-import { TextFilter } from 'components'
+import TextFilter from 'TextFilter'
 
-import { createOption } from 'components/TextFilter'
+import { createOption } from 'TextFilter'
 
 const onChange = () => {}
 

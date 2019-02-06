@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Checkbox } from 'components'
+import Checkbox from 'Checkbox'
 
 const onChange = (option) => {
   console.log(option)

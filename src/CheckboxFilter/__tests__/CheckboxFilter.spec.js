@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import 'test/setupTests'
 
-import { CheckboxFilter } from 'components'
+import CheckboxFilter from 'CheckboxFilter'
 
 const options = [
   {

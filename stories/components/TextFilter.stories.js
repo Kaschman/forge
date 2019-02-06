@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { TextFilter } from 'components'
+import TextFilter from 'TextFilter'
 
 const options = [
   'Brookhouse Ltd',
