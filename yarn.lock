@@ -1103,10 +1103,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@combine-labs/combine-polaris@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@combine-labs/combine-polaris/-/combine-polaris-0.1.5.tgz#60ff01d6dee1e3f1aa1f3c3f2343b9fedd042de5"
-  integrity sha512-pYKZ8Z0q8udHfS7xHRf5/8dvaOGFDP1TloNbnCJcdQtXJpXBZvY+kbUF1QMakZW395kBAsXxdrBHZH9pVd1DcA==
+"@combine-labs/combine-polaris@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@combine-labs/combine-polaris/-/combine-polaris-0.1.9.tgz#836f24af2af0a318cc2a87772120f825cd1c94a4"
+  integrity sha512-N8Xqp2MNS6Pa9SDxFHyiBEm8nC28P8P7g8m9WDU7RBCSStrIza+Ba1a18lZDvpf70HJtcp1SN+nxtBcFKRS0Nw==
   dependencies:
     "@shopify/images" "^1.1.0"
     "@shopify/javascript-utilities" "^2.2.0"
