@@ -20,3 +20,11 @@ storiesOf('components/NumberFilter', module)
       label="Sales Area"
     />
   ))
+  .add('Pre-filled', () => (
+    <NumberFilter
+      onChange={onChange}
+      label="Pre-filled filter"
+      start={100}
+      end={1000}
+    />
+  ))
