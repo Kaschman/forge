@@ -20,10 +20,3 @@ storiesOf('components/NumberFilter', module)
       label="Sales Area"
     />
   ))
-  .add('Integer only [Broken]', () => (
-    <NumberFilter
-      onChange={onChange}
-      label="Integers Only!"
-      integer
-    />
-  ))
