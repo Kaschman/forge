@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react'
 import { Field, Formik } from 'formik'
 
@@ -7,39 +6,25 @@ import FormNumberField from 'FormNumberField'
 import styles from './NumberFilter.module.scss'
 
 type Props = {
+  /** Label for the filter */
+  label?: string,
   /** Number value to pre-fill start field */
   start?: number,
   /** Number value to pre-fill end field */
   end?: number,
   /** onChange function to handle a successful filter return */
   onChange: ({ start: number, end: number }) => void,
-  integer?: boolean,
 }
 
 type State = {}
 
 class NumberFilter extends React.Component <Props, State> {
-  state = {
-    startTouched: false,
-    endTouched: false
-  }
+  state = {}
 
   static defaultProps = {
+    label: undefined,
     start: undefined,
     end: undefined,
-  }
-
-  handleBlur = (fieldName) => {
-    console.log(fieldName)
-    const update = {}
-    update[fieldName] = true
-    console.log(update)
-
-    this.setState(update)
-  }
-
-  handleChange = (val, func) => {
-    console.log(val, func)
   }
 
   onChange = ({ start, end }) => {
@@ -50,15 +35,14 @@ class NumberFilter extends React.Component <Props, State> {
 
   render() {
     const {
-      start,
-      end,
-      integer,
+      start: startValue,
+      end: endValue,
       label,
     } = this.props
 
     const initialValues = {
-      start,
-      end,
+      start: startValue,
+      end: endValue,
     }
 
     return (
@@ -67,12 +51,12 @@ class NumberFilter extends React.Component <Props, State> {
           initialValues={initialValues}
           validateOnBlur
           validateOnChange={false}
-          validate={values => {
-            let errors = {}
+          validate={(values) => {
+            const errors = {}
 
             const { start, end } = values
 
-            if ( start !== undefined && end !== undefined ) {
+            if (start !== undefined && end !== undefined) {
               if (start >= end) {
                 errors.start = 'From value must be less than the To value'
               }
@@ -85,24 +69,22 @@ class NumberFilter extends React.Component <Props, State> {
             return errors
           }}
         >
-          {({ values, touched, handleChange }) => (
+          {() => (
             <div>
               {label ? (
                 <div className={styles.NumberFilterLabel}>{label}</div>
-              ): null }
+              ) : null }
               <div className={styles.NumberFilter}>
                 <Field
                   component={FormNumberField}
                   name="start"
                   placeholder="From"
-                  integer={integer}
                 />
                 <span className={styles.NumberFilterDash}>-</span>
                 <Field
                   component={FormNumberField}
                   name="end"
                   placeholder="To"
-                  integer={integer}
                 />
               </div>
             </div>

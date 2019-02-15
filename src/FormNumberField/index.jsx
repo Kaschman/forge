@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react'
 
 import styles from './NumberField.module.scss'
@@ -11,7 +10,6 @@ type Props = {
   */
   field: Object,
   form: Object,
-  integer: boolean,
   label?: string,
 }
 
@@ -21,7 +19,6 @@ class NumberInput extends React.Component<Props, State> {
   static count = 0
 
   static defaultProps = {
-    integer: false,
     label: undefined,
   }
 
@@ -37,7 +34,6 @@ class NumberInput extends React.Component<Props, State> {
         errors,
         touched,
       },
-      integer,
       label,
       placeholder,
     } = this.props
@@ -50,10 +46,6 @@ class NumberInput extends React.Component<Props, State> {
     const { count } = NumberInput
 
     const id = `NumberField${count}`
-
-    if (integer) {
-      field.step = 1
-    }
 
     return (
       <div className={styles.NumberFieldWrapper}>
@@ -73,7 +65,7 @@ class NumberInput extends React.Component<Props, State> {
           placeholder={placeholder}
           {...field}
         />
-        { (error && isTouched)  ? (
+        { (error && isTouched) ? (
           <p className={styles.Error}>{error}</p>
         ) : null }
 
