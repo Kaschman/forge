@@ -6,16 +6,16 @@ import Select from 'Select'
 
 const options = [
   {
-    label: 'Option A',
+    label: 'Select',
     value: 'option_a',
   },
   {
     label: 'Option B',
-    value: 'option_d',
+    value: 'option_b',
   },
   {
     label: 'Option C',
-    value: 'option_d',
+    value: 'option_c',
   },
   {
     label: 'Option D',
@@ -55,5 +55,14 @@ storiesOf('components/Select', module)
       error="There was an error with your selection"
       label="Example Select Label"
       onChange={onChange}
+    />
+  ))
+  .add('Multi', () => (
+    <Select
+      options={options}
+      label="Example Select Label"
+      onChange={onChange}
+      isMulti
+      isClearable={false}
     />
   ))
