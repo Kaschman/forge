@@ -1,11 +1,13 @@
 import * as React from 'react'
-import {classNames} from '@shopify/react-utilities';
+import {classNames, variationName} from '@shopify/react-utilities/styles';
 
 import {
   UnstyledLink,
 } from '@combine-labs/combine-polaris'
 
 import * as styles from './Media.module.scss'
+
+export type ImageSize = 'small' | 'medium' | 'large';
 
 type Props = {
   className?: string,
@@ -14,6 +16,7 @@ type Props = {
   body?: React.ReactNode | string,
   style?: string,
   url?: string,
+  imageSize?: ImageSize,
 }
 
 function Media(props: Props) {
@@ -24,17 +27,16 @@ function Media(props: Props) {
     body,
     style,
     url,
+    imageSize,
   } = props
 
-  const mediaClasses = classNames(
-    styles.Media,
-    url && styles.link,
-    style==="active" && styles.active,
-    className && className,
+  const imageClasses = classNames(
+    styles.Image,
+    styles[variationName('image', imageSize)],
   );
 
   const imageMarkup = image ? (
-    <div className={styles.Image}>
+    <div className={imageClasses}>
       {image}
     </div>
   ) : null;
@@ -61,6 +63,13 @@ function Media(props: Props) {
     </React.Fragment>
   )
 
+  const mediaClasses = classNames(
+    styles.Media,
+    url && styles.link,
+    style==="active" && styles.active,
+    className && className,
+  );
+
   return url ? (
     <UnstyledLink className={mediaClasses} url={url}>
       {innerMarkup}
@@ -79,6 +88,7 @@ Media.defaultProps = {
   body: undefined,
   style: undefined,
   url: undefined,
+  imageSize: 'medium',
 }
 
 export default Media
