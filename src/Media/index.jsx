@@ -14,7 +14,7 @@ type Props = {
   image?: React.ReactNode,
   header?: React.ReactNode | string,
   body?: React.ReactNode | string,
-  style?: string,
+  active?: boolean,
   url?: string,
   imageSize?: ImageSize,
 }
@@ -25,7 +25,7 @@ function Media(props: Props) {
     image,
     header,
     body,
-    style,
+    active,
     url,
     imageSize,
   } = props
@@ -66,7 +66,7 @@ function Media(props: Props) {
   const mediaClasses = classNames(
     styles.Media,
     url && styles.link,
-    style==="active" && styles.active,
+    active && styles.active,
     className && className,
   );
 
@@ -86,7 +86,7 @@ Media.defaultProps = {
   image: undefined,
   header: undefined,
   body: undefined,
-  style: undefined,
+  active: false,
   url: undefined,
   imageSize: 'medium',
 }

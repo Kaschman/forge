@@ -69,7 +69,7 @@ storiesOf('components/Media', module)
       }
       header={<TextStyle variation="strong">Liverpool Aintree Gym</TextStyle>}
       body={<TextStyle variation="subdued">0004</TextStyle>}
-      style="active"
+      active
     />
     </AppProvider>
   ))
