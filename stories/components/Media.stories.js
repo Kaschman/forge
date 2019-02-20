@@ -21,6 +21,7 @@ storiesOf('components/Media', module)
           />
         }
         imageSize={radios('Image Size', { Small: 'small', Medium: 'medium', Large: 'large' }, 'medium')}
+        imageMargin={radios('Image Margin', { Small: 'small', Medium: 'medium', Large: 'large' }, 'medium')}
         header={text('Header', 'Header can contain string or ReactNode')}
         body={text('Body', 'Body can contain string or ReactNode')}
       />
@@ -36,7 +37,7 @@ storiesOf('components/Media', module)
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
         />
       }
-        imageSize={radios('Image Size', { Small: 'small', Medium: 'medium', Large: 'large' }, 'small')}
+      imageSize={radios('Image Size', { Small: 'small', Medium: 'medium', Large: 'large' }, 'small')}
       header="Sports Direct"
     />
     </AppProvider>

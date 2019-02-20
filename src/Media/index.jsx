@@ -8,6 +8,7 @@ import {
 import * as styles from './Media.module.scss'
 
 export type ImageSize = 'small' | 'medium' | 'large';
+export type ImageMargin = 'small' | 'medium' | 'large';
 
 type Props = {
   className?: string,
@@ -17,6 +18,7 @@ type Props = {
   active?: boolean,
   url?: string,
   imageSize?: ImageSize,
+  imageMargin?: ImageMargin,
 }
 
 function Media(props: Props) {
@@ -28,11 +30,13 @@ function Media(props: Props) {
     active,
     url,
     imageSize,
+    imageMargin,
   } = props
 
   const imageClasses = classNames(
     styles.Image,
     styles[variationName('image', imageSize)],
+    styles[variationName('margin', imageMargin)],
   );
 
   const imageMarkup = image ? (
@@ -89,6 +93,7 @@ Media.defaultProps = {
   active: false,
   url: undefined,
   imageSize: 'medium',
+  imageMargin: 'medium',
 }
 
 export default Media

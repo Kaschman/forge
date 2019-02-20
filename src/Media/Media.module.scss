@@ -6,11 +6,11 @@ $content-stacking-order: 1;
 $link-stacking-order: 20;
 
 $top-offset: rem(2px);
-$image-size: rem(32px);
 $image-size-sm: rem(24px);
+$image-size-md: rem(32px);
 $image-size-lg: rem(48px);
 
-$line-height: ($image-size + 2 * ($top-offset)) / 2;
+$line-height: ($image-size-md + 2 * ($top-offset)) / 2;
 $link-extra-spacing: rem(6px);
 
 .Media {
@@ -23,25 +23,39 @@ $link-extra-spacing: rem(6px);
 }
 
 .Image {
-  width: $image-size;
-  height: $image-size;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: $top-offset;
-  margin-right: spacing(tight);
   margin-bottom: $top-offset;
   flex-shrink: 0;
 }
 
 .imageSmall {
-	width: $image-size-sm;
-	height: $image-size-sm;
+  width: $image-size-sm;
+  height: $image-size-sm;
+}
+
+.imageMedium {
+  width: $image-size-md;
+  height: $image-size-md;
 }
 
 .imageLarge {
 	width: $image-size-lg;
 	height: $image-size-lg;
+}
+
+.marginSmall {
+  margin-right: spacing(tight);
+}
+
+.marginMedium {
+  margin-right: rem(12px);
+}
+
+.marginLarge {
+  margin-right: spacing();
 }
 
 .Content {
