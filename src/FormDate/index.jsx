@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import DatePicker from 'react-datepicker'
+import ReactDOM from 'react-dom'
 import moment from 'moment'
 
 import styles from './FormDate.module.scss'
@@ -9,16 +10,32 @@ import styles from './FormDate.module.scss'
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 type Props = {
+  /** label for the datepicker */
   label?: string,
   /** Date value for the datepicker */
   value: Date | string | number, // eslint-disable-line react/no-unused-prop-types
+  /** html name for the input */
   name: string,
+  /** function called when the date input changes */
   onChange: (attribute: string, value: mixed) => void,
+  /** disabled flag */
   disabled?: boolean,
+  /** boolean flag for whether the datepicker is clearable */
+  isClearable?: boolean,
 }
 
 type State = {
-  startDate: Date,
+  startDate: Date | undefined,
+}
+
+const CalendarContainer = ({ children }) => {
+  const { body } = document
+  if (body && children) {
+    return ReactDOM.createPortal(React.cloneElement(children, {
+      className: 'react-datepicker-popper',
+    }), body)
+  }
+  return null
 }
 
 class FormDate extends React.Component<Props, State> {
@@ -27,6 +44,7 @@ class FormDate extends React.Component<Props, State> {
   static defaultProps = {
     disabled: false,
     label: undefined,
+    isClearable: false,
   }
 
   constructor() {
@@ -70,6 +88,7 @@ class FormDate extends React.Component<Props, State> {
 
     const {
       disabled,
+      isClearable,
       label,
     } = this.props
 
@@ -100,6 +119,8 @@ class FormDate extends React.Component<Props, State> {
           showMonthDropdown
           useShortMonthInDropdown
           dropdownMode="select"
+          popperContainer={CalendarContainer}
+          isClearable={isClearable}
         />
       </div>
     )
