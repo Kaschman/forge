@@ -1,5 +1,5 @@
 import React from 'react'
-import { classNames } from '@shopify/react-utilities/styles';
+import { classNames } from '@shopify/react-utilities/styles'
 
 import InputWrapper from 'InputWrapper'
 import styles from './TextField.module.css'
@@ -62,25 +62,25 @@ class TextInput extends React.Component<Props, State> {
       <div className={styles.Prefix} id={`${id}Prefix`}>
         {prefix}
       </div>
-    ) : null;
+    ) : null
 
     const suffixMarkup = suffix ? (
       <div className={styles.Suffix} id={`${id}Suffix`}>
         {suffix}
       </div>
-    ) : null;
+    ) : null
 
     const textFieldClassNames = classNames(
       styles.TextField,
       minimal && styles.minimal,
       disabled && styles.disabled,
       error && styles.error,
-    );
+    )
 
     const inputClassNames = classNames(
       styles.Input,
       suffix && styles['Input-suffixed'],
-    );
+    )
 
     return (
       <InputWrapper
