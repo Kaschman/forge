@@ -70,11 +70,11 @@ class DateFilter extends React.Component <Props, State> {
           }}
         >
           {() => (
-            <div className={styles.DateFilter}>
+            <div>
               {label ? (
                 <div className={styles.DateFilterLabel}>{label}</div>
               ) : null }
-              <div className={styles.NumberFilter}>
+              <div className={styles.DateFilter}>
                 <Field
                   component={FormDate}
                   name="start"
