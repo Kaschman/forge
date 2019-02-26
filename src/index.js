@@ -1,6 +1,7 @@
 // @flow
 export { default as Checkbox } from './Checkbox'
 export { default as CheckboxFilter } from './CheckboxFilter'
+export { default as DateFilter } from './DateFilter'
 export { default as FormDate } from './FormDate'
 export { default as FormTextField } from './FormTextField'
 export { default as NumberFilter } from './NumberFilter'
