@@ -135,8 +135,9 @@ class Select extends React.Component<Props, State> {
       }),
       option: (provided, state) => ({
         ...provided,
-        color: state.isSelected || state.isFocused ? 'white' : 'inherit',
-        background: state.isSelected || state.isFocused ? '#2E64D9' : 'transparent'
+        color: state.isSelected ? 'white' : 'inherit',
+        // eslint-disable-next-line
+        background: state.isSelected ? '#2E64D9' : state.isFocused ? '#E4E6EB' : 'transparent'
       }),
     }
 
