@@ -2,14 +2,11 @@
 
 import * as React from 'react'
 import DatePicker from 'react-datepicker'
-import ReactDOM from 'react-dom'
 import moment from 'moment'
 
-import 'react-datepicker/dist/react-datepicker.css'
+import styles from './FormDate.module.scss'
 
-import { Label } from '@combine-labs/combine-polaris'
-
-import styles from './FormDate.module.css'
+import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 type Props = {
   label?: string,
@@ -24,16 +21,17 @@ type State = {
   startDate: Date,
 }
 
-const CalendarContainer = ({ children }) => (children ? (
-  ReactDOM.createPortal(React.cloneElement(children, {
-    className: 'react-datepicker-popper',
-  }), document.body)
-) : null)
-
 class FormDate extends React.Component<Props, State> {
+  static count = 0
+
   static defaultProps = {
     disabled: false,
     label: undefined,
+  }
+
+  constructor() {
+    super()
+    FormDate.count += 1
   }
 
   state = {
@@ -47,7 +45,11 @@ class FormDate extends React.Component<Props, State> {
 
     const updatedState = state
 
-    if (value && momentDate.isValid()) {
+    if (
+      !state.startDate
+      && value
+      && momentDate.isValid()
+    ) {
       updatedState.startDate = momentDate.toDate()
     }
 
@@ -57,14 +59,15 @@ class FormDate extends React.Component<Props, State> {
   handleChange = (value: Date) => {
     const { name, onChange } = this.props
 
-    this.setState({
-      startDate: value,
-    })
+    this.setState({ startDate: value })
 
     onChange(name, value)
   }
 
   render() {
+    const { count } = FormDate
+    const id = `FormDate${count}`
+
     const {
       disabled,
       label,
@@ -75,7 +78,14 @@ class FormDate extends React.Component<Props, State> {
     return (
       <div>
         { label
-          ? <Label>{label}</Label> : null
+          ? (
+            <label
+              id={`${id}Label`}
+              htmlFor={id}
+            >
+              {label}
+            </label>
+          ) : null
         }
         <DatePicker
           className={styles.FormDate}
@@ -90,7 +100,6 @@ class FormDate extends React.Component<Props, State> {
           showMonthDropdown
           useShortMonthInDropdown
           dropdownMode="select"
-          popperContainer={CalendarContainer}
         />
       </div>
     )
