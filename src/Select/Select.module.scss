@@ -1,10 +1,6 @@
 @import 'node_modules/@combine-labs/combine-polaris/styles/foundation';
 @import 'node_modules/@combine-labs/combine-polaris/styles/shared';
 
-.Error {
-  color: color('red');
-}
-
 .Select {
   @include text-style-input;
   position: relative;

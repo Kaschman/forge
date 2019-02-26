@@ -1,6 +1,12 @@
 import React from 'react'
 import ReactSelect from 'react-select'
 
+import {
+  InlineError,
+  Labelled,
+  Spacing,
+} from '@combine-labs/combine-polaris'
+
 import styles from './Select.module.scss'
 
 type Props = {
@@ -55,36 +61,36 @@ class Select extends React.Component<Props, State> {
         ...provided,
         width: '100%',
         borderColor: state.isFocused ? '#2E64D9' : '#C7CBD6',
-        boxShadow: state.isFocused ? `0 0 0 2px rgba(46, 100, 217, 0.25)` : null,
+        boxShadow: state.isFocused ? '0 0 0 2px rgba(46, 100, 217, 0.25)' : null,
         minWidth: 120,
         minHeight: 34,
         '&:hover': {
           borderColor: state.isFocused ? '#2E64D9' : '#C7CBD6',
         },
       }),
-      valueContainer: (provided) => ({
+      valueContainer: provided => ({
         ...provided,
         paddingTop: 2,
         paddingBottom: 2,
         paddingLeft: 2,
         paddingRight: 2,
       }),
-      placeholder: (provided) => ({
+      placeholder: provided => ({
         ...provided,
         color: '#8F9BB3',
         marginLeft: 10,
       }),
-      singleValue: (provided) => ({
+      singleValue: provided => ({
         ...provided,
         color: 'inherit',
         marginLeft: 10,
       }),
-      multiValue: (provided) => ({
+      multiValue: provided => ({
         ...provided,
         background: '#D5D9E0',
         borderRadius: 3,
       }),
-      multiValueLabel: (provided) => ({
+      multiValueLabel: provided => ({
         ...provided,
         color: 'inherit',
         fontSize: 14,
@@ -94,7 +100,7 @@ class Select extends React.Component<Props, State> {
         paddingRight: 4,
         paddingBottom: 0,
       }),
-      multiValueRemove: (provided) => ({
+      multiValueRemove: provided => ({
         ...provided,
         borderRadius: 3,
         borderTopLeftRadius: 0,
@@ -104,11 +110,11 @@ class Select extends React.Component<Props, State> {
           color: '#D63921',
         },
       }),
-      indicatorSeparator: (provided) => ({
+      indicatorSeparator: provided => ({
         ...provided,
         background: '#C7CBD6',
       }),
-      dropdownIndicator: (provided) => ({
+      dropdownIndicator: provided => ({
         ...provided,
         padding: 4,
         paddingTop: 6,
@@ -118,7 +124,7 @@ class Select extends React.Component<Props, State> {
           color: 'inherit',
         },
       }),
-      clearIndicator: (provided) => ({
+      clearIndicator: provided => ({
         ...provided,
         padding: 4,
         paddingTop: 6,
@@ -128,7 +134,7 @@ class Select extends React.Component<Props, State> {
           color: '#D63921',
         },
       }),
-      menu: (provided) => ({
+      menu: provided => ({
         ...provided,
         boxShadow: '0 0 0 1px rgba(10, 24, 54, 0.06), 0 2px 16px rgba(10, 24, 54, 0.1)',
         zIndex: 400,
@@ -141,29 +147,40 @@ class Select extends React.Component<Props, State> {
       }),
     }
 
+    const selectMarkup = (
+      <ReactSelect
+        styles={customStyles}
+        className={styles.Select}
+        isMulti={isMulti}
+        isSearchable={isSearchable}
+        onChange={onChange}
+        {...this.props}
+      />
+    )
+
+    const errorMarkup = error ? (
+      <Spacing marginTop="extraTight">
+        <InlineError message={error} fieldID={id} />
+      </Spacing>
+    ) : null
+
+    if (label) {
+      return (
+        <Labelled
+          htmlFor={id}
+          id={`${id}Label`}
+          label={label}
+        >
+          {selectMarkup}
+          {errorMarkup}
+        </Labelled>
+      )
+    }
+
     return (
       <div>
-        { label ? (
-          <label
-            id={`${id}Label`}
-            htmlFor={id}
-          >
-            {label}
-          </label>
-        ) : null }
-        <ReactSelect
-          styles={customStyles}
-          className={styles.Select}
-          isMulti={isMulti}
-          isSearchable={isSearchable}
-          onChange={onChange}
-          {...this.props}
-        />
-        {
-          error ? (
-            <p className={styles.Error}>{error}</p>
-          ) : null
-        }
+        {selectMarkup}
+        {errorMarkup}
       </div>
     )
   }
