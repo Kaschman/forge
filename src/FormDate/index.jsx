@@ -142,8 +142,8 @@ class FormDate extends React.Component<Props, State> {
           placeholderText={placeholder}
         />
         { error ? (
-            <p className={styles.Error}>{error}</p>
-          ) : null
+          <p className={styles.Error}>{error}</p>
+        ) : null
         }
       </div>
     )

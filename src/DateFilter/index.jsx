@@ -66,8 +66,6 @@ class DateFilter extends React.Component <Props, State> {
         selection: null,
       })
     }
-
-
   }
 
   onChange = (name, value) => {
