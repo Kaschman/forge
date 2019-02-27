@@ -48,6 +48,8 @@ class DateFilter extends React.Component <Props, State> {
     let start
     let end
 
+    const { onChange } = this.props
+
     if (option.selected) {
       start = moment().toDate()
       end = moment().add(months, 'months').toDate()
@@ -57,13 +59,15 @@ class DateFilter extends React.Component <Props, State> {
         start,
         end,
       })
+
+      onChange({ start, end })
     } else {
       this.setState({
         selection: null,
-        start: null,
-        end: null,
       })
     }
+
+
   }
 
   onChange = (name, value) => {
@@ -74,7 +78,9 @@ class DateFilter extends React.Component <Props, State> {
 
     this.setState(update)
 
-    onChange(update)
+    const { start, end } = update
+
+    onChange({ start, end })
   }
 
   render() {
