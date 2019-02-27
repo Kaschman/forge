@@ -1,8 +1,8 @@
 import React from 'react'
-import { classNames } from '@shopify/react-utilities/styles'
+import classNames from 'classnames'
 
 import InputWrapper from 'InputWrapper'
-import styles from './TextField.module.css'
+import styles from './TextField.module.scss'
 
 type Props = {
   /** Field object. Designed to be used with Formik Field component.
