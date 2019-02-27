@@ -2,10 +2,6 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import {
-  AppProvider,
-} from '@combine-labs/combine-polaris'
-
 import Select from 'Select'
 
 const options = [
@@ -33,51 +29,41 @@ const onChange = (option) => {
 
 storiesOf('components/Select', module)
   .add('Empty State', () => (
-    <AppProvider>
-      <Select
-        options={options}
-        onChange={onChange}
-      />
-    </AppProvider>
+    <Select
+      options={options}
+      onChange={onChange}
+    />
   ))
   .add('Labeled', () => (
-    <AppProvider>
-      <Select
-        options={options}
-        label="Example Select Label"
-        onChange={onChange}
-        helpText="Help me!"
-      />
-    </AppProvider>
+    <Select
+      options={options}
+      label="Example Select Label"
+      onChange={onChange}
+      helpText="Help me!"
+    />
   ))
   .add('Placeholder', () => (
-    <AppProvider>
-      <Select
-        options={options}
-        label="Example Select Label"
-        placeholder="This is a placeholder"
-        onChange={onChange}
-      />
-    </AppProvider>
+    <Select
+      options={options}
+      label="Example Select Label"
+      placeholder="This is a placeholder"
+      onChange={onChange}
+    />
   ))
   .add('Errored', () => (
-    <AppProvider>
-      <Select
-        options={options}
-        error="There was an error with your selection"
-        label="Example Select Label"
-        onChange={onChange}
-      />
-    </AppProvider>
+    <Select
+      options={options}
+      error="There was an error with your selection"
+      label="Example Select Label"
+      onChange={onChange}
+    />
   ))
   .add('Multi', () => (
-    <AppProvider>
-      <Select
-        options={options}
-        label="Example Select Label"
-        onChange={onChange}
-        isMulti
-        isClearable={false}
-      />
-    </AppProvider>
+    <Select
+      options={options}
+      label="Example Select Label"
+      onChange={onChange}
+      isMulti
+      isClearable={false}
+    />
   ))
