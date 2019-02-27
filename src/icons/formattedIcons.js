@@ -23,6 +23,7 @@ import {
 } from './icons'
 
 export { date } from './icon/date';
+export { dateStart } from './icon/date-start';
 
 export const activityIcon = {
   viewBox: '0 0 20 20',
