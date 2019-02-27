@@ -48,3 +48,11 @@ storiesOf('components/FormTextField', module)
       label="Text Field Label"
     />
   ))
+  .add('Help Text', () => (
+    <FormTextField
+      field={field}
+      form={form}
+      label="Text Field Label"
+      helpText="Some additional information to help you answer this."
+    />
+  ))
