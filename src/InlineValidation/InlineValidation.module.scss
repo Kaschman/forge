@@ -1,0 +1,9 @@
+@import 'node_modules/@combine-labs/combine-polaris/styles/foundation';
+@import 'node_modules/@combine-labs/combine-polaris/styles/shared';
+
+$error-icon-adjustment: rem(2px);
+
+.InlineValidation {
+  display: flex;
+  color: color('red', 'dark');
+}
