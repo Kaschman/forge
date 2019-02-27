@@ -46,6 +46,7 @@ storiesOf('components/Select', module)
         options={options}
         label="Example Select Label"
         onChange={onChange}
+        helpText="Help me!"
       />
     </AppProvider>
   ))
