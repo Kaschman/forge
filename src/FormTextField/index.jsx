@@ -1,8 +1,8 @@
 import React from 'react'
 
+import InputWrapper from 'InputWrapper'
 import styles from './TextField.module.css'
 
-import InputWrapper from 'InputWrapper'
 
 type Props = {
   /** Field object. Designed to be used with Formik Field component.
@@ -52,7 +52,7 @@ class TextInput extends React.Component<Props, State> {
     return (
       <InputWrapper
         label={label}
-        id={id}
+        fieldID={id}
         error={error}
         helpText={helpText}
       >

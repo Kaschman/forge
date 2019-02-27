@@ -18,17 +18,18 @@ function Label(props: Props) {
     optional,
   } = props
 
-  const optionalMarkup = optional ? <span className={styles.Optional}>(Optional)</span> : null;
+  const optionalMarkup = optional ? <span className={styles.Optional}>&nbsp;(Optional)</span> : null
 
   return (
     <label htmlFor={fieldID} className={styles.Label}>
-      {label} {optionalMarkup}
+      {label}
+      {optionalMarkup}
     </label>
   )
 }
 
 Label.defaultProps = {
-  optional: false
+  optional: false,
 }
 
 export default Label

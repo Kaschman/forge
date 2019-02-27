@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import * as styles from './InputWrapper.module.scss'
 
 import Label from 'Label'
 import InlineValidation from 'InlineValidation'
+import * as styles from './InputWrapper.module.scss'
 
 type Props = {
   /** A unique identifier for the label */
