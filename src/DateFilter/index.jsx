@@ -1,7 +1,8 @@
 import React from 'react'
-import { Field, Formik } from 'formik'
+import moment from 'moment'
 
-import FormDate from 'FormDate'
+import Checkbox from 'Checkbox' // eslint-disable-line import/no-unresolved
+import FormDate from 'FormDate' // eslint-disable-line import/no-unresolved
 
 import styles from './DateFilter.module.scss'
 
@@ -19,7 +20,11 @@ type Props = {
 type State = {}
 
 class DateFilter extends React.Component <Props, State> {
-  state = {}
+  state = {
+    start: undefined,
+    end: undefined,
+    selection: null,
+  }
 
   static defaultProps = {
     label: undefined,
@@ -27,69 +32,102 @@ class DateFilter extends React.Component <Props, State> {
     end: undefined,
   }
 
-  onChange = ({ start, end }) => {
+  componentWillMount() {
+    const {
+      start = null,
+      end = null,
+    } = this.props
+
+    this.setState({
+      start,
+      end,
+    })
+  }
+
+  handleRangeSelection = (option, months) => {
+    let start
+    let end
+
+    if (option.selected) {
+      start = moment().toDate()
+      end = moment().add(months, 'months').toDate()
+
+      this.setState({
+        selection: option.value,
+        start,
+        end,
+      })
+    } else {
+      this.setState({
+        selection: null,
+        start: null,
+        end: null,
+      })
+    }
+  }
+
+  onChange = (name, value) => {
     const { onChange } = this.props
 
-    onChange({ start, end })
+    const update = this.state
+    update[name] = value
+
+    this.setState(update)
+
+    onChange(update)
   }
 
   render() {
-    const {
-      start: startValue,
-      end: endValue,
-      label,
-    } = this.props
+    const { label } = this.props
 
-    const initialValues = {
-      start: startValue,
-      end: endValue,
-    }
+    const { selection, start, end } = this.state
 
     return (
       <div className={styles.DateFilterWrapper}>
-        <Formik
-          initialValues={initialValues}
-          validateOnBlur
-          validateOnChange={false}
-          validate={(values) => {
-            const errors = {}
-
-            const { start, end } = values
-
-            if (start !== undefined && end !== undefined) {
-              if (start >= end) {
-                errors.start = 'From value must be less than the To value'
-              }
-
-              if (Object.keys(errors).length === 0) {
-                this.onChange({ start, end })
-              }
-            }
-
-            return errors
-          }}
-        >
-          {() => (
+        <div>
+          {label ? (
+            <div className={styles.DateFilterLabel}>{label}</div>
+          ) : null }
+          <div className={styles.DateFilter}>
             <div>
-              {label ? (
-                <div className={styles.DateFilterLabel}>{label}</div>
-              ) : null }
-              <div className={styles.DateFilter}>
-                <Field
-                  component={FormDate}
-                  name="start"
-                  placeholder="From"
-                />
-                <span className={styles.DateFilterDash}>-</span>
-                <Field
-                  component={FormDate}
-                  name="end"
-                  placeholder="To"
-                />
-              </div>
+              <Checkbox
+                name="3_months"
+                label="In the next 3 months"
+                checked={selection === '3_months'}
+                onChange={option => this.handleRangeSelection(option, 3)}
+              />
+              <Checkbox
+                name="6_months"
+                label="In the next 6 months"
+                checked={selection === '6_months'}
+                onChange={option => this.handleRangeSelection(option, 6)}
+              />
+              <Checkbox
+                name="12_months"
+                label="In the next 12 months"
+                checked={selection === '12_months'}
+                onChange={option => this.handleRangeSelection(option, 12)}
+              />
             </div>
-          )}
-        </Formik>
+            <div>
+              <FormDate
+                name="start"
+                value={start}
+                onChange={this.onChange}
+                placeholder="From"
+                disabled={selection !== null}
+              />
+              <span className={styles.DateFilterDash}>-</span>
+              <FormDate
+                name="end"
+                value={end}
+                onChange={this.onChange}
+                placeholder="To"
+                disabled={selection !== null}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

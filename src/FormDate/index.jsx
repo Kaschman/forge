@@ -10,10 +10,14 @@ import styles from './FormDate.module.scss'
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 type Props = {
+  /** Error message for the component */
+  error?: string,
   /** label for the datepicker */
   label?: string,
+  /** input placeholder */
+  placeholder?: string,
   /** Date value for the datepicker */
-  value: Date | string | number, // eslint-disable-line react/no-unused-prop-types
+  value: Date | string | number | undefined, // eslint-disable-line react/no-unused-prop-types
   /** html name for the input */
   name: string,
   /** function called when the date input changes */
@@ -43,8 +47,10 @@ class FormDate extends React.Component<Props, State> {
 
   static defaultProps = {
     disabled: false,
+    error: undefined,
     label: undefined,
     isClearable: false,
+    placeholder: undefined,
   }
 
   constructor() {
@@ -56,22 +62,32 @@ class FormDate extends React.Component<Props, State> {
     startDate: undefined,
   }
 
-  static getDerivedStateFromProps(props: Props, state: State) {
-    const { value } = props
+  componentWillMount() {
+    const { value } = this.props
 
-    const momentDate = moment(value)
+    if (value) {
+      const momentDate = moment(value)
 
-    const updatedState = state
-
-    if (
-      !state.startDate
-      && value
-      && momentDate.isValid()
-    ) {
-      updatedState.startDate = momentDate.toDate()
+      if (momentDate.isValid()) {
+        this.setState({
+          startDate: momentDate.toDate(),
+        })
+      }
     }
+  }
 
-    return updatedState
+  componentDidUpdate(prevProps) {
+    const { value } = this.props
+
+    if (value !== prevProps.value) {
+      const momentDate = moment(value)
+
+      if (momentDate.isValid()) {
+        this.setState({ // eslint-disable-line react/no-did-update-set-state
+          startDate: momentDate.toDate(),
+        })
+      }
+    }
   }
 
   handleChange = (value: Date) => {
@@ -88,8 +104,10 @@ class FormDate extends React.Component<Props, State> {
 
     const {
       disabled,
+      error,
       isClearable,
       label,
+      placeholder,
     } = this.props
 
     const { startDate } = this.state
@@ -121,7 +139,12 @@ class FormDate extends React.Component<Props, State> {
           dropdownMode="select"
           popperContainer={CalendarContainer}
           isClearable={isClearable}
+          placeholderText={placeholder}
         />
+        { error ? (
+            <p className={styles.Error}>{error}</p>
+          ) : null
+        }
       </div>
     )
   }

@@ -3,6 +3,10 @@
 
 $backdrop-horizontal-spacing: spacing(tight) * 1.5;
 
+.Error{
+  color: red;
+}
+
 .FormDate {
   @include text-style-input;
   font-family: inherit;

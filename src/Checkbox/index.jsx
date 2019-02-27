@@ -13,7 +13,7 @@ type Props = {
   */
   onChange: (option) => void,
   /** Boolean determining if the checkbox is pre-checked */
-  checked?: boolean, // eslint-disable-line react/no-unused-prop-types
+  checked: boolean | undefined, // eslint-disable-line react/no-unused-prop-types
 }
 
 type State = {
@@ -24,7 +24,6 @@ class Checkbox extends React.Component<Props, State> {
   static count = 0
 
   static defaultProps = {
-    checked: false,
     label: undefined,
   }
 
@@ -42,6 +41,14 @@ class Checkbox extends React.Component<Props, State> {
 
     if (checked !== undefined) {
       this.setState({ checked })
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { checked } = this.props
+
+    if (checked !== prevProps.checked) {
+      this.setState({ checked }) // eslint-disable-line react/no-did-update-set-state
     }
   }
 
