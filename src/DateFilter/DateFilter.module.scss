@@ -1,0 +1,24 @@
+.DateFilterWrapper {
+
+}
+
+.DateFilter {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.DateFilterDash {
+  padding-top: .7rem;
+  margin: 0 1rem;
+}
+
+.DateFilterCheckboxes {
+  margin-top: 1rem;
+}
+
+.DateFilterPickers {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}

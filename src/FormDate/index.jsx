@@ -5,69 +5,109 @@ import DatePicker from 'react-datepicker'
 import ReactDOM from 'react-dom'
 import moment from 'moment'
 
-import 'react-datepicker/dist/react-datepicker.css'
+import styles from './FormDate.module.scss'
 
-import { Label } from '@combine-labs/combine-polaris'
-
-import styles from './FormDate.module.css'
+import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 type Props = {
+  /** Error message for the component */
+  error?: string,
+  /** label for the datepicker */
   label?: string,
+  /** input placeholder */
+  placeholder?: string,
   /** Date value for the datepicker */
-  value: Date | string | number, // eslint-disable-line react/no-unused-prop-types
+  value: Date | string | number | undefined, // eslint-disable-line react/no-unused-prop-types
+  /** html name for the input */
   name: string,
+  /** function called when the date input changes */
   onChange: (attribute: string, value: mixed) => void,
+  /** disabled flag */
   disabled?: boolean,
+  /** boolean flag for whether the datepicker is clearable */
+  isClearable?: boolean,
 }
 
 type State = {
-  startDate: Date,
+  startDate: Date | undefined,
 }
 
-const CalendarContainer = ({ children }) => (children ? (
-  ReactDOM.createPortal(React.cloneElement(children, {
-    className: 'react-datepicker-popper',
-  }), document.body)
-) : null)
+const CalendarContainer = ({ children }) => {
+  const { body } = document
+  if (body && children) {
+    return ReactDOM.createPortal(React.cloneElement(children, {
+      className: 'react-datepicker-popper',
+    }), body)
+  }
+  return null
+}
 
 class FormDate extends React.Component<Props, State> {
+  static count = 0
+
   static defaultProps = {
     disabled: false,
+    error: undefined,
     label: undefined,
+    isClearable: false,
+    placeholder: undefined,
+  }
+
+  constructor() {
+    super()
+    FormDate.count += 1
   }
 
   state = {
     startDate: undefined,
   }
 
-  static getDerivedStateFromProps(props: Props, state: State) {
-    const { value } = props
+  componentWillMount() {
+    const { value } = this.props
 
-    const momentDate = moment(value)
+    if (value) {
+      const momentDate = moment(value)
 
-    const updatedState = state
-
-    if (value && momentDate.isValid()) {
-      updatedState.startDate = momentDate.toDate()
+      if (momentDate.isValid()) {
+        this.setState({
+          startDate: momentDate.toDate(),
+        })
+      }
     }
+  }
 
-    return updatedState
+  componentDidUpdate(prevProps) {
+    const { value } = this.props
+
+    if (value !== prevProps.value) {
+      const momentDate = moment(value)
+
+      if (momentDate.isValid()) {
+        this.setState({ // eslint-disable-line react/no-did-update-set-state
+          startDate: momentDate.toDate(),
+        })
+      }
+    }
   }
 
   handleChange = (value: Date) => {
     const { name, onChange } = this.props
 
-    this.setState({
-      startDate: value,
-    })
+    this.setState({ startDate: value })
 
     onChange(name, value)
   }
 
   render() {
+    const { count } = FormDate
+    const id = `FormDate${count}`
+
     const {
       disabled,
+      error,
+      isClearable,
       label,
+      placeholder,
     } = this.props
 
     const { startDate } = this.state
@@ -75,7 +115,14 @@ class FormDate extends React.Component<Props, State> {
     return (
       <div>
         { label
-          ? <Label>{label}</Label> : null
+          ? (
+            <label
+              id={`${id}Label`}
+              htmlFor={id}
+            >
+              {label}
+            </label>
+          ) : null
         }
         <DatePicker
           className={styles.FormDate}
@@ -91,7 +138,13 @@ class FormDate extends React.Component<Props, State> {
           useShortMonthInDropdown
           dropdownMode="select"
           popperContainer={CalendarContainer}
+          isClearable={isClearable}
+          placeholderText={placeholder}
         />
+        { error ? (
+          <p className={styles.Error}>{error}</p>
+        ) : null
+        }
       </div>
     )
   }
