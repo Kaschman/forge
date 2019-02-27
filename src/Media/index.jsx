@@ -1,5 +1,6 @@
 import * as React from 'react'
-import {classNames, variationName} from '@shopify/react-utilities/styles';
+import classNames from 'classnames'
+import { variationName } from '@shopify/react-utilities/styles'
 
 import * as styles from './Media.module.scss'
 
@@ -33,25 +34,25 @@ function Media(props: Props) {
     styles.Image,
     styles[variationName('image', imageSize)],
     styles[variationName('margin', imageMargin)],
-  );
+  )
 
   const imageMarkup = image ? (
     <div className={imageClasses}>
       {image}
     </div>
-  ) : null;
+  ) : null
 
   const headerMarkup = header ? (
     <div className={styles.Header}>
       {header}
     </div>
-  ) : null;
+  ) : null
 
   const bodyMarkup = body ? (
     <div className={styles.Body}>
       {body}
     </div>
-  ) : null;
+  ) : null
 
   const innerMarkup = (
     <React.Fragment>
@@ -68,7 +69,7 @@ function Media(props: Props) {
     url && styles.link,
     active && styles.active,
     className && className,
-  );
+  )
 
   return url ? (
     <a className={mediaClasses} href={url}>
@@ -78,7 +79,7 @@ function Media(props: Props) {
     <div className={mediaClasses}>
       {innerMarkup}
     </div>
-  );
+  )
 }
 
 Media.defaultProps = {
