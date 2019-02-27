@@ -1,0 +1,15 @@
+@import 'node_modules/@combine-labs/combine-polaris/styles/foundation';
+@import 'node_modules/@combine-labs/combine-polaris/styles/shared';
+
+.Label {
+  padding-bottom: spacing(extra-tight);
+}
+
+.Validation {
+  padding-top: spacing(extra-tight); 
+}
+
+.HelpText {
+  color: color('ink', 'lighter');
+  padding-top: spacing(extra-tight); 
+}
