@@ -7,7 +7,7 @@ import InlineValidation from 'InlineValidation'
 
 type Props = {
   /** A unique identifier for the label */
-  id: string;
+  fieldID: string;
   /** Text for the label */
   label?: string;
   /** Is an optional field */
@@ -22,7 +22,7 @@ type Props = {
 
 function InputWrapper(props: Props) {
   const {
-    id,
+    fieldID,
     label,
     optional,
     error,
@@ -32,20 +32,20 @@ function InputWrapper(props: Props) {
 
   const labelMarkup = label ? (
     <div className={styles.Label}>
-      <Label label={label} fieldID={id} optional={optional} />
+      <Label label={label} fieldID={fieldID} optional={optional} />
     </div>
   ) : null
 
   const validationMarkup = error ? (
     <div className={styles.Validation}>
-      <InlineValidation fieldID={id} message={error} />
+      <InlineValidation fieldID={fieldID} message={error} />
     </div>
   ) : null
 
   const helpTextMarkup = helpText ? (
-    <div className={styles.HelpText}>
+    <label htmlFor={fieldID} className={styles.HelpText}>
       {helpText}
-    </div>
+    </label>
   ) : null
 
   return (
