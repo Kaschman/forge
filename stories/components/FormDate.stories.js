@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 import { storiesOf } from '@storybook/react'
 import '@combine-labs/combine-polaris/styles.css'
@@ -9,12 +10,15 @@ const onChange = (name, value) => {
   console.log(name, value)
 }
 
+const today = moment().toDate()
+
+console.log(today)
+
 storiesOf('components/FormDate', module)
   .add('Empty State', () => (
     <FormDate
       name="date"
       onChange={onChange}
-      value={new Date()}
     />
   ))
   .add('Labeled', () => (
@@ -22,7 +26,14 @@ storiesOf('components/FormDate', module)
       name="date"
       label="Example Date Label"
       onChange={onChange}
-      value={new Date()}
+    />
+  ))
+  .add('w/ Placeholder', () => (
+    <FormDate
+      name="date"
+      label="Example Date Label"
+      onChange={onChange}
+      placeholder="Select Date"
     />
   ))
   .add('Errored', () => (
@@ -31,6 +42,13 @@ storiesOf('components/FormDate', module)
       label="Example Date Label"
       error="There was an error"
       onChange={onChange}
-      value={new Date()}
+    />
+  ))
+  .add('Pre-filled', () => (
+    <FormDate
+      name="date"
+      label="Example Date Label"
+      onChange={onChange}
+      value={today}
     />
   ))
