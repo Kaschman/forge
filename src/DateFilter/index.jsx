@@ -89,7 +89,7 @@ class DateFilter extends React.Component <Props, State> {
             <div className={styles.DateFilterLabel}>{label}</div>
           ) : null }
           <div className={styles.DateFilter}>
-            <div>
+            <div className={styles.DateFilterCheckboxes}>
               <Checkbox
                 name="3_months"
                 label="In the next 3 months"
@@ -109,7 +109,7 @@ class DateFilter extends React.Component <Props, State> {
                 onChange={option => this.handleRangeSelection(option, 12)}
               />
             </div>
-            <div>
+            <div className={styles.DateFilterPickers}>
               <FormDate
                 name="start"
                 value={start}
