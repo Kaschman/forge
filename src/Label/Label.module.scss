@@ -1,0 +1,12 @@
+@import 'node_modules/@combine-labs/combine-polaris/styles/foundation';
+@import 'node_modules/@combine-labs/combine-polaris/styles/shared';
+
+.Label {
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.Optional {
+  font-style: italic;
+  color: color('blue');
+}
