@@ -1,10 +1,6 @@
 import * as React from 'react'
 import {classNames, variationName} from '@shopify/react-utilities/styles';
 
-import {
-  UnstyledLink,
-} from '@combine-labs/combine-polaris'
-
 import * as styles from './Media.module.scss'
 
 export type ImageSize = 'small' | 'medium' | 'large';
@@ -75,9 +71,9 @@ function Media(props: Props) {
   );
 
   return url ? (
-    <UnstyledLink className={mediaClasses} url={url}>
+    <a className={mediaClasses} href={url}>
       {innerMarkup}
-    </UnstyledLink>
+    </a>
   ) : (
     <div className={mediaClasses}>
       {innerMarkup}
