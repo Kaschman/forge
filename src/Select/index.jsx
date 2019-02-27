@@ -1,11 +1,16 @@
 import React from 'react'
 import ReactSelect from 'react-select'
 
+import InputWrapper from 'InputWrapper'
 import styles from './Select.module.scss'
+
+import customStyles from './customStyles'
 
 type Props = {
   /** Optional error string to be presented below the select component */
   error?: string,
+  /** Optional help text string to be presented below the input select component */
+  helpText?: string,
   /** Optional label to be presented above the select component */
   label?: string,
   /** Boolean passed to react-select determining if the select is a multiselect */
@@ -29,6 +34,7 @@ class Select extends React.Component<Props, State> {
 
   static defaultProps = {
     error: undefined,
+    helpText: undefined,
     label: undefined,
   }
 
@@ -40,6 +46,7 @@ class Select extends React.Component<Props, State> {
   render() {
     const {
       error,
+      helpText,
       label,
       isMulti = false,
       isSearchable = false,
@@ -51,28 +58,21 @@ class Select extends React.Component<Props, State> {
     const id = `Select${count}`
 
     return (
-      <div>
-        { label ? (
-          <label
-            id={`${id}Label`}
-            htmlFor={id}
-          >
-            {label}
-          </label>
-        ) : null }
+      <InputWrapper
+        label={label}
+        fieldID={id}
+        error={error}
+        helpText={helpText}
+      >
         <ReactSelect
+          styles={customStyles}
           className={styles.Select}
           isMulti={isMulti}
           isSearchable={isSearchable}
           onChange={onChange}
           {...this.props}
         />
-        {
-          error ? (
-            <p className={styles.Error}>{error}</p>
-          ) : null
-        }
-      </div>
+      </InputWrapper>
     )
   }
 }

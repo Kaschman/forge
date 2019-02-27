@@ -1,11 +1,11 @@
-.Error {
-  color: red;
-}
+@import 'node_modules/@combine-labs/combine-polaris/styles/foundation';
+@import 'node_modules/@combine-labs/combine-polaris/styles/shared';
 
 .Select {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 2.4rem;
-  text-transform: none;
-  letter-spacing: normal;
+  @include text-style-input;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: color('ink');
+  cursor: text;
 }
