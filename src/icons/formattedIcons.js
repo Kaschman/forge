@@ -11,7 +11,6 @@ import {
   checkmarkIcon as checkmark,
   checkmarkLargeIcon as checkmarkLarge,
   commentIcon as comment,
-  dateIcon as date,
   dateEndIcon as dateEnd,
   dateStartIcon as dateStart,
   embedIcon as embed,
@@ -22,6 +21,8 @@ import {
   warningTriangleIcon as warningTriangle,
   settingsIcon as settings,
 } from './icons'
+
+export { date } from './icon/date';
 
 export const activityIcon = {
   viewBox: '0 0 20 20',
@@ -81,11 +82,6 @@ export const checkmarkLargeIcon = {
 export const commentIcon = {
   viewBox: '0 0 20 20',
   body: comment,
-}
-
-export const dateIcon = {
-  viewBox: '0 0 20 20',
-  body: date,
 }
 
 export const dateEndIcon = {
