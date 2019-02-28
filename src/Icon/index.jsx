@@ -1,8 +1,8 @@
 import * as React from 'react'
-import * as styles from './Icon.module.scss'
 import * as icons from 'icons/icons'
 
 import classNames from 'classnames'
+import * as styles from './Icon.module.scss'
 
 export type Color = 'default' | 'blue' | 'green' | 'yellow' | 'red';
 
@@ -25,7 +25,7 @@ function Icon(props: Props) {
     styles.Icon,
     color && styles[color],
     backdrop && styles.hasBackdrop,
-  );
+  )
 
   const iconSource = icons[source]
 
@@ -33,7 +33,7 @@ function Icon(props: Props) {
     <svg
       className={styles.Svg}
       viewBox={iconSource.viewBox}
-      dangerouslySetInnerHTML={{__html: iconSource.body}}
+      dangerouslySetInnerHTML={{ __html: iconSource.body }}
       focusable="false"
       aria-hidden="true"
     />
