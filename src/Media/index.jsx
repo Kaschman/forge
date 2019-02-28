@@ -1,6 +1,5 @@
 import * as React from 'react'
 import classNames from 'classnames'
-import { variationName } from '@shopify/react-utilities/styles'
 
 import * as styles from './Media.module.scss'
 
@@ -32,8 +31,12 @@ function Media(props: Props) {
 
   const imageClasses = classNames(
     styles.Image,
-    styles[variationName('image', imageSize)],
-    styles[variationName('margin', imageMargin)],
+    imageSize && imageSize === 'small' && styles.imageSmall,
+    imageSize && imageSize === 'medium' && styles.imageMedium,
+    imageSize && imageSize === 'large' && styles.imageLarge,
+    imageMargin && imageMargin === 'small' && styles.marginSmall,
+    imageMargin && imageMargin === 'medium' && styles.marginMedium,
+    imageMargin && imageMargin === 'large' && styles.marginLarge,
   )
 
   const imageMarkup = image ? (

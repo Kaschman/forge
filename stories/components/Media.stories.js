@@ -38,6 +38,7 @@ storiesOf('components/Media', module)
         />
       }
       imageSize={radios('Image Size', { Small: 'small', Medium: 'medium', Large: 'large' }, 'small')}
+        imageMargin={radios('Image Margin', { Small: 'small', Medium: 'medium', Large: 'large' }, 'small')}
       header="Sports Direct"
     />
     </AppProvider>
@@ -52,8 +53,8 @@ storiesOf('components/Media', module)
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }}
         />
       }
-      header={<TextStyle variation="strong">Liverpool Aintree Gym</TextStyle>}
-      body={<TextStyle variation="subdued">0004</TextStyle>}
+      header={<strong>Liverpool Aintree Gym</strong>}
+      body={<span>0004</span>}
       url="https://staging-app.propflow.com/"
     />
     </AppProvider>
@@ -68,8 +69,8 @@ storiesOf('components/Media', module)
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }}
         />
       }
-      header={<TextStyle variation="strong">Liverpool Aintree Gym</TextStyle>}
-      body={<TextStyle variation="subdued">0004</TextStyle>}
+      header={<strong>Liverpool Aintree Gym</strong>}
+      body={<span>0004</span>}
       active
     />
     </AppProvider>
@@ -86,8 +87,8 @@ storiesOf('components/Media', module)
       }
       header={
         <span>
-          <TextStyle variation="strong">Morgan Carter</TextStyle>
-          <TextStyle variation="subdued"> · 2 hrs</TextStyle>
+          <strong>Morgan Carter</strong>
+          <span> · 2 hrs</span>
         </span>
       }
       body="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo."
@@ -105,8 +106,8 @@ storiesOf('components/Media', module)
       }
       header={
         <React.Fragment>
-          <TextStyle variation="strong">Morgan Carter</TextStyle>
-          <TextStyle variation="subdued"> · 2 hrs</TextStyle>
+          <strong>Morgan Carter</strong>
+          <span> · 2 hrs</span>
         </React.Fragment>
       }
       body="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo."
