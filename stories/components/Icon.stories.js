@@ -57,13 +57,14 @@ const smallIcons = {
 const defaultSmallIcon = 'clock'
 
 const colors = {
+  undefined: 'undefined',
   default: 'default',
   blue: 'blue',
   green: 'green',
   yellow: 'yellow',
   red: 'red',
 }
-const defaultColor = 'default'
+const defaultColor = undefined
 
 storiesOf('components/Icon', module)
   .addDecorator(withKnobs)

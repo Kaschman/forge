@@ -47,7 +47,7 @@ function Icon(props: Props) {
 }
 
 Icon.defaultProps = {
-  color: 'default',
+  color: undefined,
   backdrop: false,
 }
 
