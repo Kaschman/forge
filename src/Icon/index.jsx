@@ -4,7 +4,7 @@ import * as icons from 'icons/icons'
 import classNames from 'classnames'
 import * as styles from './Icon.module.scss'
 
-export type Color = 'default' | 'blue' | 'green' | 'yellow' | 'red';
+export type Color = 'ink' | 'blue' | 'green' | 'yellow' | 'red';
 
 type Props = {
   source: string,
