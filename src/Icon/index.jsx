@@ -4,9 +4,11 @@ import * as icons from 'icons/icons'
 
 import classNames from 'classnames'
 
+export type Color = 'default' | 'blue' | 'green' | 'yellow' | 'red';
+
 type Props = {
   source: string,
-  color?: string,
+  color?: Color,
   backdrop?: boolean,
   accessibilityLabel: string,
 }
@@ -19,18 +21,11 @@ function Icon(props: Props) {
     accessibilityLabel,
   } = props
 
-  console.log('iconSource')
-  console.log(icons)
-
   const className = classNames(
     styles.Icon,
     color && styles[color],
     backdrop && styles.hasBackdrop,
   );
-
-  console.log(color, styles[color])
-
-  console.log(icons, source, icons[source])
 
   const iconSource = icons[source]
 

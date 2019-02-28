@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, radios, boolean } from '@storybook/addon-knobs';
 
 import Icon from 'Icon'
 
@@ -56,21 +56,24 @@ const smallIcons = {
 }
 const defaultSmallIcon = 'clock'
 
+const colors = {
+  default: 'default',
+  blue: 'blue',
+  green: 'green',
+  yellow: 'yellow',
+  red: 'red',
+}
+const defaultColor = 'default'
+
 storiesOf('components/Icon', module)
   .addDecorator(withKnobs)
   .add('Large Icon', () => (
     <div style={{ background: "white", padding: 20 }}>
-      <Icon source={select('Icon Source', largeIcons, defaultLargeIcon)} />
-      <Icon source={select('Icon Source', largeIcons, defaultLargeIcon)} backdrop />
-      <Icon source={select('Icon Source', largeIcons, defaultLargeIcon)} color="green" />
-      <Icon source={select('Icon Source', largeIcons, defaultLargeIcon)} color="green" backdrop />
+      <Icon source={select('Icon Source', largeIcons, defaultLargeIcon)} color={radios('Color', colors, defaultColor)} backdrop={boolean('Backdrop', false)} />
     </div>
   ))
   .add('Small Icon', () => (
     <div style={{ background: "white", padding: 20 }}>
-      <Icon source={select('Icon Source', smallIcons, defaultSmallIcon)} />
-      <Icon source={select('Icon Source', smallIcons, defaultSmallIcon)} backdrop />
-      <Icon source={select('Icon Source', smallIcons, defaultSmallIcon)} color="green" />
-      <Icon source={select('Icon Source', smallIcons, defaultSmallIcon)} color="green" backdrop />
+      <Icon source={select('Icon Source', smallIcons, defaultSmallIcon)} color={radios('Color', colors, defaultColor)} backdrop={boolean('Backdrop', false)} />
     </div>
   ))

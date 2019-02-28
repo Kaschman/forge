@@ -32,20 +32,6 @@ $stacking-order: (
   }
 }
 
-.default {
-  fill: color('ink', 'lighter');
-  &:after {
-    background-color: color('sky', 'light');
-  }
-}
-
-.green {
-  fill: color('green', 'dark');
-  &:after {
-    background-color: color('green', 'light');
-  }
-}
-
 .Svg {
   position: relative;
   z-index: z-index(icon, $stacking-order);
@@ -53,4 +39,54 @@ $stacking-order: (
   width: 100%;
   max-width: 100%;
   max-height: 100%;
+}
+
+.default {
+  fill: color('ink', 'lighter');
+  &.hasBackdrop {
+    fill: color('ink', 'light');
+    &:after {
+      background-color: color('sky', 'light');
+    }
+  }
+}
+
+.blue {
+  fill: color('blue');
+  &.hasBackdrop {
+    fill: color('blue', 'dark');
+    &:after {
+      background-color: color('blue', 'light');
+    }
+  }
+}
+
+.green {
+  fill: color('green');
+  &.hasBackdrop {
+    fill: color('green', 'dark');
+    &:after {
+      background-color: color('green', 'light');
+    }
+  }
+}
+
+.yellow {
+  fill: color('yellow');
+  &.hasBackdrop {
+    fill: color('yellow', 'dark');
+    &:after {
+      background-color: color('yellow', 'light');
+    }
+  }
+}
+
+.red {
+  fill: color('red');
+  &.hasBackdrop {
+    fill: color('red', 'dark');
+    &:after {
+      background-color: color('red', 'light');
+    }
+  }
 }
