@@ -1,95 +1,46 @@
-import {
-  alertIcon as alert,
-  arrowLeftIcon as arrowLeft,
-  arrowRightIcon as arrowRight,
-  breakOptionIcon as breakOption,
-  calendarIcon as calendar,
-  cancelIcon as cancel,
-  checkmarkIcon as checkmark,
-  checkmarkLargeIcon as checkmarkLarge,
-  embedIcon as embed,
-  warningCircleIcon as warningCircle,
-  warningIcon as warning,
-  warningTriangleIcon as warningTriangle,
-  settingsIcon as settings,
-} from './icons'
+// Large Icons
+export { activity } from './iconsLarge/activity';
+export { areaGross } from './iconsLarge/areaGross';
+export { areaSales } from './iconsLarge/areaSales'
+export { breakFuture } from './iconsLarge/breakFuture';
+export { breakPast } from './iconsLarge/breakPast';
+export { breakServed } from './iconsLarge/breakServed';
+export { breakUpcoming } from './iconsLarge/breakUpcoming';
+export { city } from './iconsLarge/city';
+export { comment } from './iconsLarge/comment';
+export { date } from './iconsLarge/date';
+export { dateAlert } from './iconsLarge/dateAlert';
+export { dateEnd } from './iconsLarge/dateEnd';
+export { dateStart } from './iconsLarge/dateStart';
+export { decision } from './iconsLarge/decision';
+export { location } from './iconsLarge/location';
+export { misc } from './iconsLarge/misc';
+export { property } from './iconsLarge/property';
+export { settingsLarge } from './iconsLarge/settingsLarge';
+export { size } from './iconsLarge/size';
 
-export { date } from './icon/date';
-export { dateStart } from './icon/date-start';
-export { dateEnd } from './icon/date-end';
-export { dateAlert } from './icon/date-alert';
-export { city } from './icon/city';
-export { property } from './icon/property';
-export { location } from './icon/location';
-export { activity } from './icon/activity';
-export { size } from './icon/size';
-export { areaGross } from './icon/area-gross';
-export { areaSales } from './icon/area-sales'
-export { decision } from './icon/decision';
-export { misc } from './icon/misc';
-export { comment } from './icon/comment';
-
-export const alertIcon = {
-  viewBox: '0 0 20 20',
-  body: alert,
-}
-
-export const arrowLeftIcon = {
-  viewBox: '0 0 20 20',
-  body: arrowLeft,
-}
-
-export const arrowRightIcon = {
-  viewBox: '0 0 20 20',
-  body: arrowRight,
-}
-
-export const breakOptionIcon = {
-  viewBox: '0 0 20 20',
-  body: breakOption,
-}
-
-export const calendarIcon = {
-  viewBox: '0 0 20 20',
-  body: calendar,
-}
-
-export const cancelIcon = {
-  viewBox: '0 0 20 20',
-  body: cancel,
-}
-
-export const checkmarkIcon = {
-  viewBox: '0 0 20 20',
-  body: checkmark,
-}
-
-export const checkmarkLargeIcon = {
-  viewBox: '0 0 20 20',
-  body: checkmarkLarge,
-}
-
-export const embedIcon = {
-  viewBox: '0 0 20 20',
-  body: embed,
-}
-
-export const warningIcon = {
-  viewBox: '0 0 20 20',
-  body: warning,
-}
-
-export const warningCircleIcon = {
-  viewBox: '0 0 20 20',
-  body: warningCircle,
-}
-
-export const warningTriangleIcon = {
-  viewBox: '0 0 20 20',
-  body: warningTriangle,
-}
-
-export const settingsIcon = {
-  viewBox: '0 0 20 20',
-  body: settings,
-}
+// Small Icons
+export { add } from './iconsSmall/add'
+export { alert } from './iconsSmall/alert';
+export { arrowLeft } from './iconsSmall/arrowLeft';
+export { arrowRight } from './iconsSmall/arrowRight';
+export { cancel } from './iconsSmall/cancel';
+export { checkmark } from './iconsSmall/checkmark';
+export { checkmarkSmall } from './iconsSmall/checkmarkSmall';
+export { clock } from './iconsSmall/clock';
+export { completed } from './iconsSmall/completed';
+export { completedAll } from './iconsSmall/completedAll';
+export { deleteIcon } from './iconsSmall/delete';
+export { ellipsis } from './iconsSmall/ellipsis';
+export { globe } from './iconsSmall/globe';
+export { info } from './iconsSmall/info';
+export { paginationEnd } from './iconsSmall/paginationEnd';
+export { paginationStart } from './iconsSmall/paginationStart';
+export { refresh } from './iconsSmall/refresh';
+export { replay } from './iconsSmall/replay';
+export { search } from './iconsSmall/search';
+export { settings } from './iconsSmall/settings';
+export { thumbsDown } from './iconsSmall/thumbsDown';
+export { thumbsUp } from './iconsSmall/thumbsUp';
+export { visibility } from './iconsSmall/visibility';
+export { warning } from './iconsSmall/warning';
