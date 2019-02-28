@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as styles from './Icon.module.scss'
-import * as icons from 'icons/formattedIcons'
+import * as icons from 'icons/icons'
 
 import classNames from 'classnames'
 
