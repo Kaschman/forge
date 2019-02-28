@@ -44,7 +44,6 @@ $stacking-order: (
 .ink {
   fill: color('ink', 'lighter');
   &.hasBackdrop {
-    fill: color('ink', 'light');
     &:after {
       background-color: color('sky', 'light');
     }
