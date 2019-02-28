@@ -3,32 +3,24 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, radios } from '@storybook/addon-knobs';
 
-import {
-  AppProvider,
-  TextStyle,
-} from '@combine-labs/combine-polaris'
-
 import Media from 'Media'
 
 storiesOf('components/Media', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
-    <AppProvider>
-      <Media
-        image={
-          <div
-            style={{ width: '100%', height: '100%', background: '#0A1836', borderRadius: '4px' }}
-          />
-        }
-        imageSize={radios('Image Size', { Small: 'small', Medium: 'medium', Large: 'large' }, 'medium')}
-        imageMargin={radios('Image Margin', { Small: 'small', Medium: 'medium', Large: 'large' }, 'medium')}
-        header={text('Header', 'Header can contain string or ReactNode')}
-        body={text('Body', 'Body can contain string or ReactNode')}
-      />
-    </AppProvider>
+    <Media
+      image={
+        <div
+          style={{ width: '100%', height: '100%', background: '#0A1836', borderRadius: '4px' }}
+        />
+      }
+      imageSize={radios('Image Size', { Small: 'small', Medium: 'medium', Large: 'large' }, 'medium')}
+      imageMargin={radios('Image Margin', { Small: 'small', Medium: 'medium', Large: 'large' }, 'medium')}
+      header={text('Header', 'Header can contain string or ReactNode')}
+      body={text('Body', 'Body can contain string or ReactNode')}
+    />
   ))
   .add('Tenant', () => (
-    <AppProvider>
     <Media
       image={
         <img
@@ -41,10 +33,8 @@ storiesOf('components/Media', module)
         imageMargin={radios('Image Margin', { Small: 'small', Medium: 'medium', Large: 'large' }, 'small')}
       header="Sports Direct"
     />
-    </AppProvider>
   ))
   .add('Property (Link)', () => (
-    <AppProvider>
     <Media
       image={
         <img
@@ -57,10 +47,8 @@ storiesOf('components/Media', module)
       body={<span>0004</span>}
       url="https://staging-app.propflow.com/"
     />
-    </AppProvider>
   ))
   .add('Property (Active)', () => (
-    <AppProvider>
     <Media
       image={
         <img
@@ -73,10 +61,8 @@ storiesOf('components/Media', module)
       body={<span>0004</span>}
       active
     />
-    </AppProvider>
   ))
   .add('Comment', () => (
-    <AppProvider>
     <Media
       image={
         <img
@@ -93,10 +79,8 @@ storiesOf('components/Media', module)
       }
       body="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo."
     />
-    </AppProvider>
   ))
   .add('Comment (fails)', () => (
-    <AppProvider>
     <Media
       image={
         <img
@@ -112,5 +96,4 @@ storiesOf('components/Media', module)
       }
       body="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo."
     />
-    </AppProvider>
   ))
