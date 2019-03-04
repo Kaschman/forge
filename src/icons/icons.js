@@ -1,51 +1,47 @@
-// Exports raw SVG without the contents of the <svg> tag
-// For use with Polaris' Icon class
+// Large Icons
+export { activity } from './iconsLarge/activity'
+export { areaGross } from './iconsLarge/areaGross'
+export { areaSales } from './iconsLarge/areaSales'
+export { breakFuture } from './iconsLarge/breakFuture'
+export { breakPast } from './iconsLarge/breakPast'
+export { breakServed } from './iconsLarge/breakServed'
+export { breakUpcoming } from './iconsLarge/breakUpcoming'
+export { city } from './iconsLarge/city'
+export { comment } from './iconsLarge/comment'
+export { date } from './iconsLarge/date'
+export { dateAlert } from './iconsLarge/dateAlert'
+export { dateEnd } from './iconsLarge/dateEnd'
+export { dateStart } from './iconsLarge/dateStart'
+export { decision } from './iconsLarge/decision'
+export { location } from './iconsLarge/location'
+export { misc } from './iconsLarge/misc'
+export { number } from './iconsLarge/number'
+export { property } from './iconsLarge/property'
+export { settingsLarge } from './iconsLarge/settingsLarge'
+export { size } from './iconsLarge/size'
 
-export const alertIcon: string = '<path d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-8h2V6H9v4zm0 4h2v-2H9v2z" fill-rule="evenodd"/>'
-export const areaIcon: string = '<g fill="none" fill-rule="evenodd"><path fill="#637381" fill-opacity=".25" d="M0 6h11a3 3 0 0 1 3 3v11H4a4 4 0 0 1-4-4V6z"/><path fill="#637381" fill-rule="nonzero" d="M14 11.5v3h-1.5v-3H14zm0-2h-1.5V9A1.5 1.5 0 0 0 11 7.5h-.5V6h.5a3 3 0 0 1 3 3v.5zm0 7V20l-1.5-1.5v-2H14zM8.5 6v1.5h-3V6h3zm-5 0v1.5h-2L0 6h3.5z"/><rect width="18.5" height="18.5" x=".75" y=".75" fill="transparent" fill-opacity=".01" stroke="#637381" stroke-width="1.5" rx="4"/></g>'
-export const areaGrossIcon: string = '<g fill="#5E6880" fill-rule="evenodd"><rect width="20" height="20" opacity=".25" rx="4"/><path fill-rule="nonzero" d="M20 5.5v3h-1.5v-3H20zm-.03-2h-1.52a2.504 2.504 0 0 0-1.95-1.95V.03a4 4 0 0 1 3.47 3.47zm.03 7V14l-1.5-1.5v-2H20zM14.5 0v1.5h-3V0h3zm-5 0v1.5h-2L6 0h3.5z"/><path fill-rule="nonzero" d="M8 0v1.5H4A2.5 2.5 0 0 0 1.5 4v12A2.5 2.5 0 0 0 4 18.5h12a2.5 2.5 0 0 0 2.5-2.5v-4.127H20V16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h4zm0 0v1.5H4A2.5 2.5 0 0 0 1.5 4v12A2.5 2.5 0 0 0 4 18.5h12a2.5 2.5 0 0 0 2.5-2.5v-4.127H20V16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h4z"/></g>'
-export const arrowLeftIcon: string = '<path d="M17 9H5.414l3.293-3.293a.999.999 0 1 0-1.414-1.414l-5 5a.999.999 0 0 0 0 1.414l5 5a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L5.414 11H17a1 1 0 1 0 0-2" fill-rule="evenodd"/>'
-export const arrowRightIcon: string = '<path d="M17.707 9.293l-5-5a.999.999 0 1 0-1.414 1.414L14.586 9H3a1 1 0 1 0 0 2h11.586l-3.293 3.293a.999.999 0 1 0 1.414 1.414l5-5a.999.999 0 0 0 0-1.414" fill-rule="evenodd"/>'
-export const calendarIcon: string = '<path d="M4 8h12V6H4v2zm9 4h2v-2h-2v2zm-4 0h2v-2H9v2zm0 4h2v-2H9v2zm-4-4h2v-2H5v2zm0 4h2v-2H5v2zM17 4h-2V3a1 1 0 1 0-2 0v1H7V3a1 1 0 1 0-2 0v1H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z" fill-rule="evenodd" />'
-export const cancelIcon: string = '<path d="M11.414 10l4.293-4.293a.999.999 0 1 0-1.414-1.414L10 8.586 5.707 4.293a.999.999 0 1 0-1.414 1.414L8.586 10l-4.293 4.293a.999.999 0 1 0 1.414 1.414L10 11.414l4.293 4.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L11.414 10z" />'
-export const checkmarkIcon: string = '<path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"/>'
-export const commentIcon: string = '<path fill-opacity=".25" fill-rule="evenodd" stroke="#5E6880" stroke-width="1.5" d="M3.75 18.457l4.082-3.207H16A3.25 3.25 0 0 0 19.25 12V4A3.25 3.25 0 0 0 16 .75H4A3.25 3.25 0 0 0 .75 4v8a3.252 3.252 0 0 0 2.437 3.148l.563.145v3.164z"/>'
-export const dateIcon: string = '<g fill-rule="evenodd"><path fill="#FFF" fill-rule="nonzero" d="M0 7h20v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7z"/><path fill="#5E6880" fill-rule="nonzero" d="M2 1.5h16a2 2 0 0 1 2 2v5H0v-5a2 2 0 0 1 2-2z" opacity=".25"/><path fill="#5E6880" fill-rule="nonzero" d="M1.5 8.5V18a.5.5 0 0 0 .5.5h16a.5.5 0 0 0 .5-.5V8.5h-17zM0 7h20v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7z"/><path fill="#5E6880" fill-rule="nonzero" d="M1.5 7h17V3.5A.5.5 0 0 0 18 3H2a.5.5 0 0 0-.5.5V7zM2 1.5h16a2 2 0 0 1 2 2v5H0v-5a2 2 0 0 1 2-2z"/><path fill="#5E6880" d="M15.25 0a.75.75 0 0 1 .75.75v3a.75.75 0 1 1-1.5 0v-3a.75.75 0 0 1 .75-.75zM4.75 0a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 4.75 0z"/></g>'
-export const dateEndIcon: string = '<g fill="none" fill-rule="evenodd"><path fill="#FFF" fill-rule="nonzero" d="M0 7h20v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7z"/><path fill="#5E6880" fill-rule="nonzero" d="M2 1.5h16a2 2 0 0 1 2 2v5H0v-5a2 2 0 0 1 2-2z" opacity=".25"/><path fill="#5E6880" fill-rule="nonzero" d="M1.5 8.5V18a.5.5 0 0 0 .5.5h16a.5.5 0 0 0 .5-.5V8.5h-17zM0 7h20v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7z"/><path fill="#5E6880" fill-rule="nonzero" d="M1.5 7h17V3.5A.5.5 0 0 0 18 3H2a.5.5 0 0 0-.5.5V7zM2 1.5h16a2 2 0 0 1 2 2v5H0v-5a2 2 0 0 1 2-2z"/><path fill="#5E6880" d="M15.25 0a.75.75 0 0 1 .75.75v3a.75.75 0 1 1-1.5 0v-3a.75.75 0 0 1 .75-.75zM4.75 0a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 4.75 0z"/><g fill="#5E6880" fill-rule="nonzero"><path d="M6.47 11.03l1.06-1.06 6 6-1.06 1.06z"/><path d="M7.53 17.03l-1.06-1.06 6-6 1.06 1.06z"/></g></g>'
-export const dateStartIcon: string = '<g fill="none" fill-rule="evenodd"><path fill="#FFF" fill-rule="nonzero" d="M0 6.5h20v11.423C20 19.07 19.105 20 18 20H2c-1.105 0-2-.93-2-2.077V6.5z"/><path fill="#5E6880" fill-rule="nonzero" d="M2 1.5h16c1.105 0 2 .831 2 1.857V8H0V3.357C0 2.331.895 1.5 2 1.5z" opacity=".25"/><path fill="#5E6880" fill-rule="nonzero" d="M1.5 8.058v9.865c0 .287.224.52.5.52h16a.51.51 0 0 0 .5-.52V8.058h-17zM0 6.5h20v11.423C20 19.07 19.105 20 18 20H2c-1.105 0-2-.93-2-2.077V6.5z"/><path fill="#5E6880" fill-rule="nonzero" d="M1.5 6.607h17v-3.25c0-.256-.224-.464-.5-.464H2c-.276 0-.5.208-.5.464v3.25zM2 1.5h16c1.105 0 2 .831 2 1.857V8H0V3.357C0 2.331.895 1.5 2 1.5z"/><g fill="#5E6880" fill-rule="nonzero"><path d="M5.75 14a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5h-7.5z"/><path d="M9.72 10.78a.75.75 0 0 1 1.06-1.06l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 0 1-1.06-1.06l2.47-2.47-2.47-2.47z"/></g><path fill="#5E6880" d="M15.25 0a.75.75 0 0 1 .75.75v3a.75.75 0 1 1-1.5 0v-3a.75.75 0 0 1 .75-.75zM4.75 0a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 4.75 0z"/></g>'
-export const embedIcon: string = '<path d="M17 13a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-3a1 1 0 1 1 2 0v2h12v-2a1 1 0 0 1 1-1zm0-11a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0V4H4v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1h14zm.555 7.168a1.001 1.001 0 0 1 0 1.664l-3 2a1 1 0 0 1-1.109-1.664L15.198 10l-1.752-1.168a1 1 0 1 1 1.109-1.664l3 2zM6.832 7.445a1 1 0 0 1-.277 1.387L4.803 10l1.752 1.168a1 1 0 1 1-1.11 1.664l-3-2a1.001 1.001 0 0 1 0-1.664l3-2a1 1 0 0 1 1.387.277zM9 14.001a1 1 0 0 1-.948-1.317l2-6a1 1 0 0 1 1.896.633l-2 6A.999.999 0 0 1 9 14z" />'
-export const warningIcon: string = '<path id="a" d="M10 0C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0m0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8m0-7a1 1 0 0 0 1-1V6a1 1 0 1 0-2 0v4a1 1 0 0 0 1 1m0 1.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2"/>'
-export const warningTriangleIcon: string = '<g ><path fill="#FFF" d="M7.843 1.717a2.522 2.522 0 0 1 4.314 0l7.505 12.529c.448.776.45 1.73.007 2.509-.441.774-1.26 1.235-2.17 1.245H2.493c-.901-.01-1.721-.471-2.162-1.245a2.525 2.525 0 0 1 .013-2.52L7.843 1.718z"/><path fill="#5E6880" d="M7.843 1.717a2.522 2.522 0 0 1 4.314 0l7.505 12.529c.448.776.45 1.73.007 2.509-.441.774-1.26 1.235-2.17 1.245H2.493c-.901-.01-1.721-.471-2.162-1.245a2.525 2.525 0 0 1 .013-2.52L7.843 1.718zM1.637 14.996a1.02 1.02 0 0 0-.003 1.016.993.993 0 0 0 .867.488h14.99c.378-.004.703-.187.875-.488.18-.315.179-.702.003-1.006L10.873 2.491a1.02 1.02 0 0 0-1.745-.001L1.637 14.996z"/><path fill="#5E6880" d="M10 12.25a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 6a1 1 0 1 1 2 0v4a1 1 0 0 1-2 0V6z"/></g>'
-
-export const breakOptionIcon: string = `<g fill-rule="evenodd">
-  <path fill="#FFF" fill-rule="nonzero" d="M2 0h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
-  <path opacity=".25" d="M1 1h7v18H1z"/>
-  <path fill-rule="nonzero" d="M9 0v1.5H2a.5.5 0 0 0-.5.5v16a.5.5 0 0 0 .5.5h7V20H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h7zm2 0h3v1.5h-3V0zm0 20v-1.5h3V20h-3zm5-20h2a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5h-2V0zm0 20v-1.5h2a.5.5 0 0 0 .5-.5v-2H20v2a2 2 0 0 1-2 2h-2zm4-6h-1.5v-3H20v3zm0-8v3h-1.5V6H20z"/>
-  <path fill-rule="nonzero" d="M7.5 18.5v-17H2a.5.5 0 0 0-.5.5v16a.5.5 0 0 0 .5.5h5.5zM2 0h7v20H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
-</g>`
-
-export const propertyIcon: string = `<g fill="none" fill-rule="evenodd">
-  <path fill="#637381" fill-opacity=".25" stroke="#637381" stroke-width="1.5" d="M1.21352549,4.25 L18.7864745,4.25 L17.0364745,0.75 L2.96352549,0.75 L1.21352549,4.25 Z"/>
-  <path fill="#FFF" stroke="#637381" stroke-width="1.5" d="M6.73921898,7.75 C6.15213014,8.66852705 5.129288,9.25 4,9.25 C3.56238225,9.25 3.13901285,9.16275304 2.75,9.00069136 L2.75,18 C2.75,18.6903559 3.30964406,19.25 4,19.25 L16,19.25 C16.6903559,19.25 17.25,18.6903559 17.25,18 L17.25,9.00069136 C16.8609872,9.16275304 16.4376178,9.25 16,9.25 C14.870712,9.25 13.8478699,8.66852705 13.260781,7.75 L12.739219,7.75 C12.1521301,8.66852705 11.129288,9.25 10,9.25 C8.870712,9.25 7.84786986,8.66852705 7.26078102,7.75 L6.73921898,7.75 Z M2.00178349,4.25 L2.75,4.49975627 L2.75,4.25 L5.25,4.25 L5.25,4.49975627 L5.99821651,4.25 L6,4.25 L5.99955366,4.24955366 L6.5996201,4.04925019 C5.99002428,3.23788287 5.03485037,2.75 4,2.75 C2.96514963,2.75 2.00997572,3.23788287 1.4003799,4.04925019 L2.00044634,4.24955366 L2,4.25 L2.00178349,4.25 Z M14.75,4.25 L17.25,4.25 L17.25,4.49975627 L17.9982165,4.25 L18,4.25 L17.9995537,4.24955366 L18.5996201,4.04925019 C17.9900243,3.23788287 17.0348504,2.75 16,2.75 C14.9651496,2.75 14.0099757,3.23788287 13.4003799,4.04925019 L14.0004463,4.24955366 L14,4.25 L14.0017835,4.25 L14.75,4.49975627 L14.75,4.25 Z"/>
-  <path fill="#637381" fill-opacity=".25" stroke="#637381" stroke-width="1.5" d="M1.26073166 4.25C.929894886 4.76630437.75 5.36868099.75 6 .75 7.79492544 2.20507456 9.25 4 9.25 4.9455426 9.25 5.82389436 8.84495665 6.43769562 8.1495243L7 7.51243754 7.56230438 8.1495243C8.17610564 8.84495665 9.0544574 9.25 10 9.25 10.9455426 9.25 11.8238944 8.84495665 12.4376956 8.1495243L13 7.51243754 13.5623044 8.1495243C14.1761056 8.84495665 15.0544574 9.25 16 9.25 17.7949254 9.25 19.25 7.79492544 19.25 6 19.25 5.36868099 19.0701051 4.76630437 18.7392683 4.25L1.26073166 4.25zM6.75 19.25L13.25 19.25 13.25 14C13.25 13.3096441 12.6903559 12.75 12 12.75L8 12.75C7.30964406 12.75 6.75 13.3096441 6.75 14L6.75 19.25z"/>
-</g>`
-
-export const miscIcon: string = `<g fill="none" fill-rule="evenodd">
-  <rect width="7.5" height="7.5" x=".75" y=".75" fill="#FFF" stroke="#637381" stroke-width="1.5" rx="2"/>
-  <rect width="7.5" height="7.5" x=".75" y="11.75" fill="#637381" fill-opacity=".25" stroke="#637381" stroke-width="1.5" rx="2"/>
-  <rect width="7.5" height="7.5" x="11.75" y="11.75" fill="#FFF" stroke="#637381" stroke-width="1.5" rx="2"/>
-  <path stroke="#637381" stroke-linecap="round" stroke-width="1.5" d="M15.5 8L15.5 1M12 4.5L19 4.5"/>
-</g>`
-
-export const warningCircleIcon: string = `
-  <g fill="none" fill-rule="evenodd">
-    <circle cx="10" cy="10" r="10" fill="#FFF"/>
-    <path fill="#5E6880" fill-rule="nonzero" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 2C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z"/>
-    <path fill="#5E6880" fill-rule="nonzero" d="M9 6a1 1 0 1 1 2 0v4a1 1 0 0 1-2 0V6zm1 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-  </g>`
-
-export const activityIcon = '<path fill="#637381" d="M1.96663487,7.40212942 L0.624037721,9.41602515 C0.394273376,9.76067166 -0.0713786307,9.85380207 -0.416025147,9.62403772 C-0.760671664,9.39427338 -0.853802065,8.92862137 -0.624037721,8.58397485 L1.37596228,5.58397485 C1.68137218,5.12586001 2.35984578,5.14200499 2.64311969,5.61412818 L4.84347778,9.28139166 L7.29775312,2.73665742 C7.54238342,2.08430995 8.46675015,2.08893167 8.70484507,2.7436927 L11.9143344,11.5697884 L15.278857,-0.206040846 C15.4814353,-0.915064732 16.4783274,-0.936726068 16.7115125,-0.237170825 L18.7115125,5.76282918 C18.8424983,6.15578666 18.6301283,6.58052664 18.2371708,6.71151247 C17.8442133,6.8424983 17.4194734,6.63012831 17.2884875,6.23717082 L16.0551281,2.53709269 L12.721143,14.2060408 C12.5214154,14.9050873 11.5436087,14.9395552 11.2951549,14.2563073 L7.98917595,5.16486508 L5.70224688,11.2633426 C5.48181631,11.8511574 4.67987382,11.9241943 4.35688031,11.3858718 L1.96663487,7.40212942 Z" transform="translate(1 3)"/>'
-
-export const checkmarkLargeIcon: string = '<path d="M14.793 5.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 1.414-1.414L7.5 12.586l7.293-7.293z"/>'
-
-export const settingsIcon: string = '<path id="settings-a" d="M19.4916,11.8972 L17.9326,11.0172 C17.9776,10.6752 17.9996,10.3352 17.9996,10.0002 C17.9996,9.6652 17.9776,9.3252 17.9326,8.9822 L19.4916,8.1032 C19.7256,7.9702 19.8966,7.7502 19.9656,7.4912 C20.0356,7.2312 19.9976,6.9542 19.8616,6.7232 L17.8146,3.2592 C17.5376,2.7912 16.9396,2.6302 16.4616,2.8972 L14.9706,3.7382 C14.3706,3.2622 13.7046,2.8732 12.9996,2.5862 L12.9996,1.0002 C12.9996,0.4482 12.5526,0.0002 11.9996,0.0002 L7.9996,0.0002 C7.4476,0.0002 6.9996,0.4482 6.9996,1.0002 L6.9996,2.5862 C6.2946,2.8732 5.6286,3.2622 5.0296,3.7382 L3.5376,2.8972 C3.0626,2.6302 2.4626,2.7912 2.1856,3.2592 L0.1386,6.7232 C0.0016,6.9542 -0.0354,7.2312 0.0346,7.4912 C0.1036,7.7502 0.2746,7.9702 0.5086,8.1032 L2.0676,8.9822 C2.0226,9.3252 1.9996,9.6652 1.9996,10.0002 C1.9996,10.3352 2.0226,10.6752 2.0676,11.0172 L0.5086,11.8972 C0.2746,12.0292 0.1036,12.2502 0.0346,12.5092 C-0.0354,12.7692 0.0016,13.0452 0.1386,13.2772 L2.1856,16.7412 C2.4626,17.2092 3.0626,17.3722 3.5376,17.1032 L5.0296,16.2612 C5.6286,16.7382 6.2946,17.1272 6.9996,17.4132 L6.9996,19.0002 C6.9996,19.5522 7.4476,20.0002 7.9996,20.0002 L11.9996,20.0002 C12.5526,20.0002 12.9996,19.5522 12.9996,19.0002 L12.9996,17.4132 C13.7046,17.1272 14.3706,16.7382 14.9706,16.2612 L16.4616,17.1032 C16.9396,17.3722 17.5376,17.2092 17.8146,16.7412 L19.8616,13.2772 C19.9976,13.0452 20.0356,12.7692 19.9656,12.5092 C19.8966,12.2502 19.7256,12.0292 19.4916,11.8972 M15.8486,8.6782 C15.9496,9.1262 15.9996,9.5712 15.9996,10.0002 C15.9996,10.4282 15.9496,10.8732 15.8486,11.3222 C15.7516,11.7522 15.9486,12.1952 16.3326,12.4112 L17.6196,13.1372 L16.5906,14.8792 L15.3376,14.1722 C14.9546,13.9562 14.4716,14.0162 14.1546,14.3222 C13.4636,14.9852 12.6196,15.4782 11.7146,15.7472 C11.2906,15.8732 10.9996,16.2632 10.9996,16.7062 L10.9996,18.0002 L8.9996,18.0002 L8.9996,16.7062 C8.9996,16.2632 8.7086,15.8732 8.2856,15.7472 C7.3796,15.4782 6.5356,14.9852 5.8456,14.3222 C5.5286,14.0162 5.0446,13.9562 4.6616,14.1722 L3.4096,14.8792 L2.3796,13.1372 L3.6666,12.4112 C4.0516,12.1952 4.2476,11.7522 4.1516,11.3222 C4.0506,10.8732 3.9996,10.4282 3.9996,10.0002 C3.9996,9.5712 4.0506,9.1262 4.1516,8.6782 C4.2476,8.2482 4.0516,7.8052 3.6666,7.5882 L2.3796,6.8622 L3.4096,5.1202 L4.6616,5.8272 C5.0456,6.0442 5.5286,5.9842 5.8456,5.6782 C6.5356,5.0142 7.3796,4.5222 8.2856,4.2522 C8.7086,4.1262 8.9996,3.7362 8.9996,3.2942 L8.9996,2.0002 L10.9996,2.0002 L10.9996,3.2942 C10.9996,3.7362 11.2906,4.1262 11.7146,4.2522 C12.6196,4.5222 13.4636,5.0142 14.1546,5.6782 C14.4716,5.9842 14.9536,6.0432 15.3376,5.8272 L16.5906,5.1202 L17.6196,6.8622 L16.3326,7.5882 C15.9486,7.8052 15.7516,8.2482 15.8486,8.6782 M9.9999,6 C7.7939,6 5.9999,7.794 5.9999,10 C5.9999,12.206 7.7939,14 9.9999,14 C12.2059,14 13.9999,12.206 13.9999,10 C13.9999,7.794 12.2059,6 9.9999,6 M9.9999,12 C8.8969,12 7.9999,11.103 7.9999,10 C7.9999,8.897 8.8969,8 9.9999,8 C11.1029,8 11.9999,8.897 11.9999,10 C11.9999,11.103 11.1029,12 9.9999,12"/>'
+// Small Icons
+export { add } from './iconsSmall/add'
+export { alert } from './iconsSmall/alert'
+export { arrowLeft } from './iconsSmall/arrowLeft'
+export { arrowRight } from './iconsSmall/arrowRight'
+export { cancel } from './iconsSmall/cancel'
+export { checkmark } from './iconsSmall/checkmark'
+export { checkmarkSmall } from './iconsSmall/checkmarkSmall'
+export { clock } from './iconsSmall/clock'
+export { completed } from './iconsSmall/completed'
+export { completedAll } from './iconsSmall/completedAll'
+export { deleteIcon } from './iconsSmall/delete'
+export { ellipsis } from './iconsSmall/ellipsis'
+export { globe } from './iconsSmall/globe'
+export { info } from './iconsSmall/info'
+export { paginationEnd } from './iconsSmall/paginationEnd'
+export { paginationStart } from './iconsSmall/paginationStart'
+export { refresh } from './iconsSmall/refresh'
+export { replay } from './iconsSmall/replay'
+export { search } from './iconsSmall/search'
+export { settings } from './iconsSmall/settings'
+export { thumbsDown } from './iconsSmall/thumbsDown'
+export { thumbsUp } from './iconsSmall/thumbsUp'
+export { visibility } from './iconsSmall/visibility'
+export { warning } from './iconsSmall/warning'

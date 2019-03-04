@@ -11,7 +11,7 @@ import {
 
 import type { Event } from 'types'
 
-import { dateStartIcon, dateEndIcon } from 'icons/formattedIcons'
+import { dateStart, dateEnd } from 'icons/icons'
 
 import * as styles from './Timeline.module.css'
 
@@ -45,7 +45,7 @@ function Timeline(props: Props) {
             ? (
               <Media
                 key="start"
-                icon={dateStartIcon}
+                icon={dateStart}
                 iconBackdrop
                 header={<TextStyle variation="strong">{start.name}</TextStyle>}
                 body={(
@@ -77,7 +77,7 @@ function Timeline(props: Props) {
             ? (
               <Media
                 key="end"
-                icon={dateEndIcon}
+                icon={dateEnd}
                 iconBackdrop
                 header={<TextStyle variation="strong">{end.name}</TextStyle>}
                 body={(

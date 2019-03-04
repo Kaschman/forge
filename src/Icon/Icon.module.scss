@@ -1,0 +1,91 @@
+@import 'node_modules/@combine-labs/combine-polaris/styles/foundation';
+@import 'node_modules/@combine-labs/combine-polaris/styles/shared';
+
+$backdrop-spacing: (spacing(extra-loose) - rem(20px)) / 2;
+$stacking-order: (
+  backdrop: 1,
+  icon: 2,
+);
+
+.Icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: rem(20px);
+  width: rem(20px);
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.hasBackdrop {
+  margin: $backdrop-spacing;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: z-index(backdrop, $stacking-order);
+    top: -1 * $backdrop-spacing;
+    bottom: -1 * $backdrop-spacing;
+    left: -1 * $backdrop-spacing;
+    right: -1 * $backdrop-spacing;
+    border-radius: 50%;
+  }
+}
+
+.Svg {
+  position: relative;
+  z-index: z-index(icon, $stacking-order);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.ink {
+  fill: color('ink', 'lighter');
+  &.hasBackdrop {
+    &:after {
+      background-color: color('sky', 'light');
+    }
+  }
+}
+
+.blue {
+  fill: color('blue');
+  &.hasBackdrop {
+    fill: color('blue', 'dark');
+    &:after {
+      background-color: color('blue', 'light');
+    }
+  }
+}
+
+.green {
+  fill: color('green');
+  &.hasBackdrop {
+    fill: color('green', 'dark');
+    &:after {
+      background-color: color('green', 'light');
+    }
+  }
+}
+
+.yellow {
+  fill: color('yellow');
+  &.hasBackdrop {
+    fill: color('yellow', 'dark');
+    &:after {
+      background-color: color('yellow', 'light');
+    }
+  }
+}
+
+.red {
+  fill: color('red');
+  &.hasBackdrop {
+    fill: color('red', 'dark');
+    &:after {
+      background-color: color('red', 'light');
+    }
+  }
+}
