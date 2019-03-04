@@ -1,0 +1,108 @@
+@import 'node_modules/@combine-labs/combine-polaris/styles/foundation';
+@import 'node_modules/@combine-labs/combine-polaris/styles/shared';
+
+$backdrop-stacking-order: -1;
+$content-stacking-order: 1;
+$link-stacking-order: 20;
+
+$top-offset: rem(2px);
+$image-size-sm: rem(24px);
+$image-size-md: rem(32px);
+$image-size-lg: rem(48px);
+
+$line-height: ($image-size-md + 2 * ($top-offset)) / 2;
+$link-extra-spacing: rem(6px);
+
+.Media {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  z-index: $content-stacking-order;
+}
+
+.Image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: $top-offset;
+  margin-bottom: $top-offset;
+  flex-shrink: 0;
+}
+
+.imageSmall {
+  width: $image-size-sm;
+  height: $image-size-sm;
+}
+
+.imageMedium {
+  width: $image-size-md;
+  height: $image-size-md;
+}
+
+.imageLarge {
+	width: $image-size-lg;
+	height: $image-size-lg;
+}
+
+.marginSmall {
+  margin-right: spacing(tight);
+}
+
+.marginMedium {
+  margin-right: rem(12px);
+}
+
+.marginLarge {
+  margin-right: spacing();
+}
+
+.Content {
+  align-self: center;
+  width: 0%;
+  flex-grow: 1;
+}
+
+.Header,
+.Body {
+  line-height: $line-height;
+  min-height: $line-height;
+}
+
+.link,
+.active {
+  &:after {
+    content: "";
+    position: absolute;
+    top: -1 * (spacing(tight) - $top-offset);
+    left: -1 * spacing(tight);
+    right: -1 * spacing(tight);
+    bottom: -1 * (spacing(tight) - $top-offset);
+    border-radius: border-radius();
+    z-index: $backdrop-stacking-order;
+  }
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  &:after {
+    @include state(base);
+  }
+  &:hover:after {
+    @include state(hover);
+  }
+  &:focus:after,
+  &:active:after {
+    @include state(press);
+  }
+}
+
+.active {
+  &:after {
+    background: none;
+    border: 1px solid color('blue');
+    box-shadow: 0 0 0 2px rgba(color('blue'), 0.25);
+  }
+}
