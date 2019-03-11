@@ -1,5 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
+import NumberFormat from 'react-number-format'
 
 import InputWrapper from 'InputWrapper'
 import styles from './TextField.module.scss'
@@ -42,15 +43,21 @@ class TextInput extends React.Component<Props, State> {
       field,
       form: {
         errors,
+        setFieldValue,
       },
       label,
       helpText,
       prefix,
       suffix,
       minimal,
+      type,
     } = this.props
 
+    console.log(type)
+
     const { name, disabled } = field
+
+    console.log(field, this.props.form) //eslint-disable-line
 
     const error = errors[name]
 
@@ -82,6 +89,14 @@ class TextInput extends React.Component<Props, State> {
       suffix && styles['Input-suffixed'],
     )
 
+    const onNumberValueChange = ({
+      formattedValue, // eslint-disable-line no-unused-vars
+      value,
+      floatValue, // eslint-disable-line no-unused-vars
+    }) => {
+      setFieldValue(field.name, Number(value))
+    }
+
     return (
       <InputWrapper
         label={label}
@@ -91,12 +106,22 @@ class TextInput extends React.Component<Props, State> {
       >
         <div className={textFieldClassNames}>
           {prefixMarkup}
-          <input
-            id={id}
-            type="text"
-            className={inputClassNames}
-            {...field}
-          />
+          { type === 'number' ? (
+            <NumberFormat
+              isNumericString
+              thousandSeparator
+              value={field.value}
+              className={inputClassNames}
+              onValueChange={onNumberValueChange}
+            />
+          ) : (
+            <input
+              id={id}
+              type="text"
+              className={inputClassNames}
+              {...field}
+            />
+          )}
           {suffixMarkup}
           <div className={styles.Backdrop} />
         </div>
