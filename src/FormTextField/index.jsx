@@ -13,11 +13,13 @@ type Props = {
   */
   field: Object,
   form: Object,
-  label?: string,
   helpText?: string,
+  label?: string,
+  minimal?: boolean,
+  /** Whether this is a numerical field */
+  number?: boolean,
   prefix?: string | React.ReactNode,
   suffix?: string | React.ReactNode,
-  minimal?: boolean,
 }
 
 type State = {}
@@ -28,9 +30,10 @@ class TextInput extends React.Component<Props, State> {
   static defaultProps = {
     label: undefined,
     helpText: undefined,
+    minimal: false,
+    number: false,
     prefix: undefined,
     suffix: undefined,
-    minimal: false,
   }
 
   constructor() {
@@ -53,11 +56,7 @@ class TextInput extends React.Component<Props, State> {
       type,
     } = this.props
 
-    console.log(type)
-
     const { name, disabled } = field
-
-    console.log(field, this.props.form) //eslint-disable-line
 
     const error = errors[name]
 
