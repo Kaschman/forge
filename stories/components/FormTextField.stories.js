@@ -30,7 +30,18 @@ storiesOf('components/FormTextField', module)
       form={form}
     />
   ))
-  .add('Number Field', () => (
+  .add('Empty Number Field', () => (
+    <Formik
+      initialValues={initialValues}
+    >
+      <Field
+        name="number_field_empty"
+        type="number"
+        component={FormTextField}
+      />
+    </Formik>
+  ))
+  .add('Filled Number Field', () => (
     <Formik
       initialValues={initialValues}
     >
