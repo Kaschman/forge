@@ -1,5 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
+import NumberFormat from 'react-number-format'
 
 import InputWrapper from 'InputWrapper'
 import styles from './TextField.module.scss'
@@ -12,11 +13,13 @@ type Props = {
   */
   field: Object,
   form: Object,
-  label?: string,
   helpText?: string,
+  label?: string,
+  minimal?: boolean,
+  /** Whether this is a numerical field */
+  number?: boolean,
   prefix?: string | React.ReactNode,
   suffix?: string | React.ReactNode,
-  minimal?: boolean,
 }
 
 type State = {}
@@ -27,9 +30,10 @@ class TextInput extends React.Component<Props, State> {
   static defaultProps = {
     label: undefined,
     helpText: undefined,
+    minimal: false,
+    number: false,
     prefix: undefined,
     suffix: undefined,
-    minimal: false,
   }
 
   constructor() {
@@ -42,12 +46,14 @@ class TextInput extends React.Component<Props, State> {
       field,
       form: {
         errors,
+        setFieldValue,
       },
       label,
       helpText,
       prefix,
       suffix,
       minimal,
+      type,
     } = this.props
 
     const { name, disabled } = field
@@ -82,6 +88,14 @@ class TextInput extends React.Component<Props, State> {
       suffix && styles['Input-suffixed'],
     )
 
+    const onNumberValueChange = ({
+      formattedValue, // eslint-disable-line no-unused-vars
+      value,
+      floatValue, // eslint-disable-line no-unused-vars
+    }) => {
+      setFieldValue(field.name, Number(value))
+    }
+
     return (
       <InputWrapper
         label={label}
@@ -91,12 +105,22 @@ class TextInput extends React.Component<Props, State> {
       >
         <div className={textFieldClassNames}>
           {prefixMarkup}
-          <input
-            id={id}
-            type="text"
-            className={inputClassNames}
-            {...field}
-          />
+          { type === 'number' ? (
+            <NumberFormat
+              isNumericString
+              thousandSeparator
+              value={field.value}
+              className={inputClassNames}
+              onValueChange={onNumberValueChange}
+            />
+          ) : (
+            <input
+              id={id}
+              type="text"
+              className={inputClassNames}
+              {...field}
+            />
+          )}
           {suffixMarkup}
           <div className={styles.Backdrop} />
         </div>

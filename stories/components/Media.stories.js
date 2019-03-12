@@ -105,6 +105,7 @@ storiesOf('components/Media', module)
 //         </React.Fragment>
 // )}
 //       body="Fusce dapibus, tellus ac cursus commodo, tortor mauris
-//            condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo."
+//            condimentum nibh, ut fermentum massa justo sit amet risus.
+//            Nullam quis risus eget urna mollis ornare vel eu leo."
 //     />
 //   ))
