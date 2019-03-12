@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
 import * as styles from './Media.module.scss'
@@ -75,9 +76,9 @@ function Media(props: Props) {
   )
 
   return url ? (
-    <a className={mediaClasses} href={url}>
+    <Link className={mediaClasses} href={url}>
       {innerMarkup}
-    </a>
+    </Link>
   ) : (
     <div className={mediaClasses}>
       {innerMarkup}
