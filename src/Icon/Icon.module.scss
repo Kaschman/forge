@@ -42,7 +42,7 @@ $stacking-order: (
 }
 
 .ink {
-  fill: color('ink', 'lighter');
+  fill: color('ink', 'light');
   &.hasBackdrop {
     &:after {
       background-color: color('sky', 'light');

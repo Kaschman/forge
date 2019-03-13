@@ -1103,10 +1103,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@combine-labs/combine-polaris@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@combine-labs/combine-polaris/-/combine-polaris-0.1.9.tgz#836f24af2af0a318cc2a87772120f825cd1c94a4"
-  integrity sha512-N8Xqp2MNS6Pa9SDxFHyiBEm8nC28P8P7g8m9WDU7RBCSStrIza+Ba1a18lZDvpf70HJtcp1SN+nxtBcFKRS0Nw==
+"@combine-labs/combine-polaris@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@combine-labs/combine-polaris/-/combine-polaris-0.1.11.tgz#ef8c1015407949add05bf576b21b51f2618d4598"
+  integrity sha512-133H6oqGFQzZa0NiZn5YRca4r6zZmzAOSVmttFpcr0t/Vs2br2hhgOlKJ9KUrvA1gt9mkcDEvdXK6E4VaXHxoA==
   dependencies:
     "@shopify/images" "^1.1.0"
     "@shopify/javascript-utilities" "^2.2.0"
@@ -8746,6 +8746,13 @@ react-modal@^3.6.1:
     prop-types "^15.5.10"
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
+
+react-number-format@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-4.0.6.tgz#3cdfc48f5fc106edb3cf1d767d320348aa857f6a"
+  integrity sha512-WfBlqYRD0fGZpQxRy1apxsPeaqtxhzo7CnUVFKBoGDsQbc89+DQNhjG/D3IxgGYM47oKB+W/Su9ol/vVS6Wc2Q==
+  dependencies:
+    prop-types "^15.6.0"
 
 react-onclickoutside@^6.7.1:
   version "6.7.1"
