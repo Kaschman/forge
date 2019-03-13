@@ -22,7 +22,7 @@ const largeIcons = {
   decision: 'decision',
   location: 'location',
   misc: 'misc',
-  number: 'number',
+  numberIcon: 'numberIcon',
   property: 'property',
   settingsLarge: 'settingsLarge',
   size: 'size',
