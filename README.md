@@ -35,6 +35,15 @@ Start storybook:
 
 Storybook will now be available at `localhost:6006`
 
+## Publish
+Run the following commands from `develop` to publish a new version of Forge:
+`$ yarn publish:patch` - increments 0.0.x
+`$ yarn publish:minor` - increments 0.x.0
+`$ yarn publish:major` - increments x.0.0
+
+Only major versions should include breaking updates.
+Publish a minor version if a new component is added.
+
 ## Contributing
 
 
