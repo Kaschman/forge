@@ -76,7 +76,7 @@ function Media(props: Props) {
   )
 
   return url ? (
-    <Link className={mediaClasses} href={url}>
+    <Link className={mediaClasses} to={url}>
       {innerMarkup}
     </Link>
   ) : (
