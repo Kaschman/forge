@@ -1,13 +1,17 @@
 /* global document */
-
 import * as React from 'react'
+import classNames from 'classnames'
 import DatePicker from 'react-datepicker'
 import ReactDOM from 'react-dom'
 import moment from 'moment'
 
+import InputWrapper from 'InputWrapper'
+
 import styles from './FormDate.module.scss'
 
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
+
+import './Datepicker.css' // This avoids minifying the CSS, and so applies it correctly.
 
 type Props = {
   /** Error message for the component */
@@ -16,6 +20,8 @@ type Props = {
   label?: string,
   /** input placeholder */
   placeholder?: string,
+  /** Help text that goes below the input */
+  helpText?: string,
   /** Date value for the datepicker */
   value: Date | string | number | undefined, // eslint-disable-line react/no-unused-prop-types
   /** html name for the input */
@@ -51,6 +57,7 @@ class FormDate extends React.Component<Props, State> {
     label: undefined,
     isClearable: false,
     placeholder: undefined,
+    helpText: undefined,
   }
 
   constructor() {
@@ -108,24 +115,26 @@ class FormDate extends React.Component<Props, State> {
       isClearable,
       label,
       placeholder,
+      helpText,
     } = this.props
 
     const { startDate } = this.state
 
+    const inputClassNames = classNames(
+      styles.Input,
+      disabled && styles.disabled,
+      error && styles.error,
+    )
+
     return (
-      <div>
-        { label
-          ? (
-            <label
-              id={`${id}Label`}
-              htmlFor={id}
-            >
-              {label}
-            </label>
-          ) : null
-        }
+      <InputWrapper
+        label={label}
+        fieldID={id}
+        error={error}
+        helpText={helpText}
+      >
         <DatePicker
-          className={styles.FormDate}
+          className={inputClassNames}
           disabled={disabled}
           selected={startDate}
           onChange={this.handleChange}
@@ -141,11 +150,7 @@ class FormDate extends React.Component<Props, State> {
           isClearable={isClearable}
           placeholderText={placeholder}
         />
-        { error ? (
-          <p className={styles.Error}>{error}</p>
-        ) : null
-        }
-      </div>
+      </InputWrapper>
     )
   }
 }
