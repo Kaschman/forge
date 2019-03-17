@@ -1,4 +1,4 @@
-export const breakPast = {
+export const breakWontServe = {
   viewBox: '0 0 20 20',
   body: `
 <g fill-rule="evenodd">
