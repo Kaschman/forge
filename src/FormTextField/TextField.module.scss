@@ -30,19 +30,6 @@ $stacking-order: (
   color: color('ink');
 }
 
-.focus > .Input,
-.Input:focus {
-  outline: none;
-  border: border(transparent);
-
-  // stylelint-disable-next-line selector-max-class, selector-max-combinators
-  ~ .Backdrop {
-    background: white;
-    border-color: color('blue');
-    box-shadow: 0 0 0 2px rgba(color('blue'), 0.25);
-  }
-}
-
 .error {
   .Input::placeholder {
     color: rgba(color('ink'), 0.4);
@@ -58,6 +45,19 @@ $stacking-order: (
   // We need this to override the box-shadow in the focus state.
   // stylelint-disable-next-line selector-max-class, selector-max-specificity, selector-max-combinators
   > .Input:focus ~ .Backdrop {
+    border-color: color('blue');
+    box-shadow: 0 0 0 2px rgba(color('blue'), 0.25);
+  }
+}
+
+.focus > .Input,
+.Input:focus {
+  outline: none;
+  border: border(transparent);
+
+  // stylelint-disable-next-line selector-max-class, selector-max-combinators
+  ~ .Backdrop {
+    background: white;
     border-color: color('blue');
     box-shadow: 0 0 0 2px rgba(color('blue'), 0.25);
   }
@@ -84,6 +84,7 @@ $stacking-order: (
   min-height: control-height();
   margin: 0;
   padding: control-vertical-padding() $backdrop-horizontal-spacing;
+  color: color('ink');
   background: none;
   border-radius: border-radius();
   border: border(transparent);

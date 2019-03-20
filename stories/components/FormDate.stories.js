@@ -28,12 +28,28 @@ storiesOf('components/FormDate', module)
       onChange={onChange}
     />
   ))
+  .add('Disabled', () => (
+    <FormDate
+      name="date"
+      label="Example Date Label"
+      onChange={onChange}
+      disabled
+    />
+  ))
   .add('w/ Placeholder', () => (
     <FormDate
       name="date"
       label="Example Date Label"
       onChange={onChange}
       placeholder="Select Date"
+    />
+  ))
+  .add('Help Text', () => (
+    <FormDate
+      name="date"
+      label="Example Date Label"
+      onChange={onChange}
+      helpText="Some additional information to help you answer this."
     />
   ))
   .add('Errored', () => (
