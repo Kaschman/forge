@@ -10,6 +10,9 @@
     "build": "webpack --mode production --config tooling/webpack/webpack.config.js",
     "build-storybook": "build-storybook",
     "lint": "eslint ./src --fix --ext .js,.jsx",
+    "publish:major": "yarn build && npm version major && npm publish",
+    "publish:minor": "yarn build && npm version minor && npm publish",
+    "publish:patch": "yarn build && npm version patch && npm publish",
     "storybook": "NODE_PATH=src start-storybook -p 6006",
     "test": "jest"
   },
