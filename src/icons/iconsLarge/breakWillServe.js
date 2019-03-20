@@ -1,4 +1,4 @@
-export const breakUpcoming = {
+export const breakWillServe = {
   viewBox: '0 0 20 20',
   body: `
 <g fill-rule="evenodd">
